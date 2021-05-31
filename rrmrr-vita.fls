@@ -1,6 +1,6 @@
-PWD d:\Downloads\rrmrr-vita
+PWD d:\Documents\GitHub\rrmrr-vita
 INPUT C:\Users\ifyou\AppData\Local\MiKTeX\miktex\data\le\xetex\xelatex.fmt
-INPUT d:\Downloads\rrmrr-vita\rrmrr-vita.tex
+INPUT d:\Documents\GitHub\rrmrr-vita\rrmrr-vita.tex
 OUTPUT rrmrr-vita.log
 INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\memoir\memoir.cls
 INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\memoir\memoir.cls
@@ -726,6 +726,13 @@ INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\fontawesome\fontawe
 INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\fontawesome\fontawesomesymbols-xeluatex.tex
 INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\fontawesome\fontawesomesymbols-xeluatex.tex
 INPUT C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex\latex\url\url.sty
+INPUT .\vc.tex
+INPUT .\vc.tex
+INPUT .\vc.tex
+INPUT vc.tex
+INPUT .\vc.tex
+INPUT .\vc.tex
+INPUT vc.tex
 INPUT .\rrmrr-vita.aux
 INPUT rrmrr-vita.aux
 INPUT rrmrr-vita.aux

@@ -81,7 +81,8 @@
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
 %% If you comment it out, be sure to remove the \rfoot comment below, too.
-%\input{vc}
+%\immediate\write18{vc.bat}
+\input{vc}
 
 %%%------------------------------------------------------------------------
 %%% Document
@@ -118,8 +119,18 @@
 %% \vspace element to keep the marginal header pleasingly aligned with the first 
 %% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
-\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
 
+\newcommand{\marginhead}[1]{%
+	\medskip%
+	\mbox{\relax}% KEY command to make it possible to automatically keep inline with body text
+	\marginpar{%
+		\raggedright% now RIGHT justified to body text, comment out if prefer to be left justified
+		\footnotesize\sffamily%
+		\color{Maroon}% mimicing the current header color in use
+		#1%
+	}%
+	\vskip-1ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
+}%
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
 % \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
@@ -146,8 +157,8 @@
 % These lines will insert git revision info in the footer, using the vc
 % package---see docs for vc package for details. Comment out this line
 % if you're not using vc, and also remove the \input{vc} line above.
-%\pagestyle{kjh}
-%\thispagestyle{kjhgit}
+\pagestyle{kjh}
+\thispagestyle{kjhgit}
 
 %%%------------------------------------------------------------------------
 %%% Address and contact block
@@ -196,8 +207,7 @@
 %%%------------------------------------------------------------------------
 %% Education
 %%%------------------------------------------------------------------------
-\marginhead{{\vskip 0.3em} \sffamily {education}}
-\bigskip
+\marginhead{\sffamily education}
 
 \ind M.A., Development Policy, KDI School of Public Policy and Management, 2018. 
 
@@ -211,8 +221,8 @@
 %%%------------------------------------------------------------------------
 %% Publications
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily {\vskip 0.35em} publications \newline \& talks}
-\medskip
+\marginhead{\sffamily publications \newline \& talks}
+
 \noindent\emph{\textbf{Books} \vspace{0.01in}}
 
 \ind with Mario Sánchez \& Douglas Castro. 2016. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Centro de Análisis Socio-Cultural. \vspace{0.05in} \normalsize
@@ -264,8 +274,8 @@ Inaugural Conference–Nicaragua. 2015.
 %% Professional Experience
 %%%------------------------------------------------------------------------
 
-\marginhead{{\vskip 0.3em} \sffamily{professional \newline experience}}
-\medskip
+\marginhead{\sffamily professional \newline experience}
+
 \noindent\emph{\textbf{Teaching experience} \vspace{0.05in}}
 
 \ind The World Bank. \emph{Instructor}. 2020--. \newline \texttt{R training}.
@@ -301,8 +311,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% Honors and Awards
 %%%------------------------------------------------------------------------
-\marginhead{{\vskip 0.3em} \sffamily{honors \newline \& awards}}
-\medskip
+\marginhead{\sffamily honors \newline \& awards}
 
 \ind KDI School of Public Policy and Management. 2018.
 
@@ -328,9 +337,8 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% Software Resources
 %%%------------------------------------------------------------------------
-\marginhead{{\vskip 0.3em} \sffamily{sofware \newline resources}}
+\marginhead{\sffamily sofware \newline resources}
 
-\medskip
 \noindent\emph{\textbf{R packages} \vspace{0.05in}}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. An R package of tidy datasets related to the elections in Nicaragua from 1990 to 2006.
@@ -355,8 +363,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% SKILLS
 %%%------------------------------------------------------------------------
-\marginhead{{\vskip 0.3em} \sffamily{Skills}}
-\medskip
+\marginhead{\sffamily Skills}
 
 \noindent\emph{\textbf{Softwares} \vspace{0.05in}}
 
@@ -375,8 +382,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% References
 %%%------------------------------------------------------------------------
-\marginhead{{\vskip 0.3em} \sffamily{references}}
-\medskip
+\marginhead{\sffamily references}
 
 \noindent
 \begin{minipage}[t]{.5\textwidth}
