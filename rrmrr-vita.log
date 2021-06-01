@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.5.30)  31 MAY 2021 05:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.5.31)  31 MAY 2021 23:50
 entering extended mode
 **d:/Documents/GitHub/rrmrr-vita/rrmrr-vita.tex
 (d:/Documents/GitHub/rrmrr-vita/rrmrr-vita.tex
@@ -769,94 +769,94 @@ Package csquotes Info: ... found 'babel' package.
  (rrmrr-vita.aux)
 \openout1 = `rrmrr-vita.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 107.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 111.
  (C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 107.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 107.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 111.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 111.
  (C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 107.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 107.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 107.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 107.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 107.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 107.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 107.
-LaTeX Font Info:    Redeclaring math accent \check on input line 107.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 107.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 107.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 107.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 107.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 107.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 111.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 111.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 111.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 111.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 111.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 111.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 111.
+LaTeX Font Info:    Redeclaring math accent \check on input line 111.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 111.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 111.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 111.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 111.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 111.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 107.
+(Font)              `operators' in the math version `normal' on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 107.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 111.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 107.
+(Font)              `operators' in the math version `bold' on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 107.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 107.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 107.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 107.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 107.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 107.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 107.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 107.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 107.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 107.
-Package hyperref Info: Link coloring ON on input line 107.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 111.
+Package hyperref Info: Link coloring ON on input line 111.
  (C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Users\ifyou\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -868,10 +868,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 107.
-LaTeX Info: Redefining \ref on input line 107.
-LaTeX Info: Redefining \pageref on input line 107.
-LaTeX Info: Redefining \nameref on input line 107.
+LaTeX Info: Redefining \nameref on input line 111.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 (rrmrr-vita.out) (rrmrr-vita.out)
 \@outlinefile=\write4
 \openout4 = `rrmrr-vita.out'.
@@ -924,12 +924,6 @@ Package fontspec Info: Font family 'MinionPro(0)' created for font 'Minion
 (fontspec)             Pro/BI/OT:script=latn;language=dflt;+onum;+liga;+smcp;mapping=tex-text;"
 
 
-
-Package fontspec Warning: OpenType feature 'Ligatures=Common' (liga) not
-(fontspec)                available for font 'Unit-Medium' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-
 Package fontspec Info: Could not resolve font "Unit-Medium/BI" (it probably
 (fontspec)             doesn't exist).
 
@@ -942,14 +936,9 @@ Package fontspec Info: Could not resolve font "Unit-Medium/I" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Warning: OpenType feature 'Ligatures=Common' (liga) not
-(fontspec)                available for font 'Unit-Medium' with script
-(fontspec)                'CustomDefault' and language 'Default'.
-
-
 Package fontspec Info: Font family 'Unit-Medium(0)' created for font
 (fontspec)             'Unit-Medium' with options
-(fontspec)             [Ligatures=TeX,Mapping=tex-text,Ligatures={Common},Colour=AA0000].
+(fontspec)             [Ligatures=TeX,Mapping=tex-text,Colour=AA0000].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
@@ -1016,59 +1005,47 @@ Package fontspec Info: Font family 'MinionPro(1)' created for font 'Minion
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Minion
 (fontspec)             Pro/OT:script=latn;language=dflt;+smcp;"
 
-
-Package fontspec Info: Font family 'MinionProMediumCaption(0)' created for
-(fontspec)             font 'Minion Pro Medium Caption' with options
-(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Minion Pro Medium
-(fontspec)             Caption/OT:script=latn;language=dflt;+onum;+liga;mapping=tex-text;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-
 LaTeX Font Info:    Font shape `TU/JetBrainsMono(0)/m/n' will be
-(Font)              scaled to size 5.83997pt on input line 199.
+(Font)              scaled to size 5.83997pt on input line 198.
 
-Overfull \hbox (2.2548pt too wide) in paragraph at lines 273--274
+Overfull \hbox (0.7596pt too wide) in paragraph at lines 232--233
+  \TU/MinionPro(0)/m/n/9 Thesis: \TU/MinionPro(0)/m/it/9 Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua\TU/MinionPro(0)/m/n/9 . 
+ []
+
+
+Overfull \hbox (2.2548pt too wide) in paragraph at lines 274--275
 \TU/MinionPro(0)/m/n/10.95 American Ecoomics Association/Allied Social Sciences Association; Universidad Cen-
  []
 
 
-Overfull \hbox (9.7353pt too wide) in paragraph at lines 275--278
+Overfull \hbox (9.7353pt too wide) in paragraph at lines 276--279
 \TU/MinionPro(0)/m/n/10.95 Conference (Poster); KAEA-KEA Joint International Conference, Sungkyunkwan
  []
 
 LaTeX Font Info:    Font shape `TU/JetBrainsMono(0)/m/n' will be
-(Font)              scaled to size 7.99344pt on input line 279.
+(Font)              scaled to size 7.99344pt on input line 280.
 LaTeX Font Info:    Font shape `TU/JetBrainsMono(0)/m/n' will be
-(Font)              scaled to size 6.56996pt on input line 279.
+(Font)              scaled to size 6.56996pt on input line 280.
 [1
 
 ]
-Overfull \hbox (3.31395pt too wide) in paragraph at lines 283--285
+Overfull \hbox (3.31395pt too wide) in paragraph at lines 284--286
 \TU/MinionPro(0)/m/n/10.95 VI Ethics Conference, Universidad Centroamericana–Nicaragua; Interdisciplinary Re-
  []
 
 
-Overfull \hbox (13.00774pt too wide) in paragraph at lines 286--287
+Overfull \hbox (13.00774pt too wide) in paragraph at lines 287--288
 \TU/MinionPro(0)/m/n/10.95 Central American Congress of Sociology–Panamá; Interdisciplinary Research Congress–
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 341.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 341.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 341.
 [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 347.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 347.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 347.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 387.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 387.
-
-Overfull \hbox (73.79887pt too wide) in paragraph at lines 404--429
+Overfull \hbox (73.79887pt too wide) in paragraph at lines 402--427
 [][] 
  []
 
@@ -1077,12 +1054,12 @@ Package rerunfilecheck Info: File `rrmrr-vita.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21226 strings out of 411486
- 358592 string characters out of 2832792
- 776916 words of memory out of 3000000
- 41151 multiletter control sequences out of 15000+600000
- 408258 words of font info for 104 fonts, out of 8000000 for 9000
+ 21204 strings out of 411486
+ 358048 string characters out of 2832792
+ 776902 words of memory out of 3000000
+ 41136 multiletter control sequences out of 15000+600000
+ 407338 words of font info for 100 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 88i,12n,99p,393b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,12n,97p,393b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on rrmrr-vita.xdv (3 pages, 61928 bytes).
+Output written on rrmrr-vita.xdv (3 pages, 63968 bytes).

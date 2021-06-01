@@ -51,19 +51,19 @@
 
 %% Change as needed. Or just add me as a coauthor. Only some of these are 
 %% used below in the hyperref declaration and address banner section.
-\def\myauthor{Rohit Zambre}
+\def\myauthor{Rony Rodriguez Ramirez}
 \def\mytitle{Vita}
 \def\mycopyright{\myauthor}
 \def\mykeywords{}
 \def\mybibliostyle{plain}
 \def\mybibliocommand{}
 \def\mysubtitle{}
-\def\myaffiliation{University of California, Irvine}
-\def\myaddress{Department of Electrical Engineering and Computer Science}
+\def\myaffiliation{The World Bank}
+\def\myaddress{DIME Analytics}
 \def\myemail{rodriguezramirez@worldbank.org}
 \def\myweb{rrmaximiliano.github.io}
 \def\myphone{(202) 876-6568}
-\def\myfax{(919) 660-5623}
+\def\myfax{}
 \def\mytwitter{@rrmaximiliano}
 \def\mygithub{github.com/RRMaximiliano}
 \def\myversion{}
@@ -73,7 +73,7 @@
 \def\myaffiliation{University of California, Irvine}
 \def\myauthor{Rony Rodriguez-Ramirez}
 \date{} % not used (revision control instead)
-\def\mykeywords{Rohit, Zambre, Rohit Zambre, Vita, CV, Resume, HPC}
+\def\mykeywords{Rony, Rodriguez, Ramirez, Rony Rodriguez-Ramirez, Vita, CV, Resume}
 
 %%%------------------------------------------------------------------------  
 %%% Git version tracking 
@@ -81,14 +81,18 @@
 
 %% If you don't use git or the vc package (from CTAN), comment this out.
 %% If you comment it out, be sure to remove the \rfoot comment below, too.
+%% \immediate\write18{vc.bat}
+%% \input{vc}
+
+%% Set up git with xstring and catchfile since I couldn't make vc or gitinfo work
 
 % Two required libraries
 \usepackage{xstring}
 \usepackage{catchfile}
 
 % Set user input
-\newcommand{\gitfolder}{.git}                       % Relative path to .git folder from .tex file
-\newcommand{\reponame}{rrmaximiliano/rrmrr-tex}     % Name of account and repo. Will be included in URL
+\newcommand{\gitfolder}{.git}                             % Relative path to .git folder from .tex file
+\newcommand{\reponame}{rrmaximiliano/rrmrr-tex}           % Name of account and repo. Will be included in URL
 
 % Based on this https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
 \CatchFileDef{\headfull}{\gitfolder/HEAD.}{}              % Get path to head file for checked out branch
@@ -96,10 +100,10 @@
 \StrBehind[2]{\head}{/}[\branch]                          % Parse out the path only
 \CatchFileDef{\commit}{\gitfolder/refs/heads/\branch.}{}  % Get the content of the branch head
 \StrGobbleRight{\commit}{1}[\commithash]                  % Remove end of line character
-\StrLeft{\commithash}{6}[\commitsix]
+\StrLeft{\commithash}{7}[\commitsix]                      % Get a 7 hex commit code
 
-% Build the URL to this commit based on the information we now have
-\newcommand{\commiturl}{\texttt{\commitsix}}
+% Build the commit based on the information we now have
+\newcommand{\commitcode}{\texttt{\commitsix}}
 
 %%%------------------------------------------------------------------------
 %%% Document
@@ -116,16 +120,11 @@
 \setromanfont[Mapping={tex-text}, 
 	Numbers={OldStyle},
 	Ligatures={Common}]{Minion Pro}
-  \setsansfont[Mapping=tex-text,
-	Ligatures={Common}, 
+\setsansfont[Mapping=tex-text,
 	Colour=AA0000]{Unit-Medium}
-  \setmonofont[Mapping=tex-text,Scale=0.73]{JetBrains Mono} 
+\setmonofont[Mapping=tex-text,Scale=0.73]{JetBrains Mono} 
 
 \newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
-
-\newfontface\addressblock[Mapping={tex-text}, 
-	Numbers={OldStyle},
-	Ligatures={Common}]{Minion Pro Medium Caption}
 
 %%%------------------------------------------------------------------------
 %%% Local commands
@@ -150,7 +149,7 @@
 }%
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
-% \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
+\newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Linux Libertine}\selectfont\&\,}}
 
 %% No bullets on labels
 \renewcommand{\labelitemi}{~} 
@@ -182,7 +181,7 @@
 %%%------------------------------------------------------------------------
 \begin{minipage}[t]{2.3in}
  \flushright {\scriptsize 
-      \href{https://www.worldbank.org/en/about/unit/unit-dec}{Development Economics}  \\
+      \href{https://www.worldbank.org/en/about/unit/unit-dec}{DIME Analytics}  \\
       The World Bank        \\
       1818 H Street N.W.    \\
       \vspace{-0.05in} Washington, DC 20433 
@@ -197,19 +196,21 @@
 \begin{minipage}[t]{1.9in}
   \flushright {\scriptsize 
   \texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}} \, \faTwitter \\
-  \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faGlobe \\
-  \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub \\
-  \texttt{\href{\myemail}{\myemail}} \, \faEnvelope \\
+  \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faLink          \\
+  \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub    \\
+  \vspace{-0.05in}  \texttt{\href{\myemail}{\myemail}} \, \faAt                     
   }
 \end{minipage}
 
 \medskip
 
+%%%------------------------------------------------------------------------
 %% Name 
-\noindent{\LARGE\scheader \textsc{rony rodriguez-ramirez}}
+%%%------------------------------------------------------------------------
+\noindent{\LARGE\scheader \textsc{rony rodrigo maximiliano rodríguez-ramírez}}
 \reversemarginpar
 
-\bigskip       
+% \medskip       
 
 %%%------------------------------------------------------------------------
 %% Appointments
@@ -220,7 +221,7 @@
 
 \ind Research Assistant, Development Impact Evaluation, The World Bank, 2019--.
 
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% Education
 %%%------------------------------------------------------------------------
@@ -228,13 +229,13 @@
 
 \ind M.A., Development Policy, KDI School of Public Policy and Management, 2018. 
 
-\ind \hspace{0.35in} \footnotesize Thesis: \emph{Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua} \newline Winner: Outstanding Thesis Award \newline Concentrations: Sustainable Development \& Global Governance and Political Economy \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Thesis: \emph{Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua}. \newline Winner: Outstanding Thesis Award \newline Concentrations: Sustainable Development \& Global Governance and Political Economy. \normalsize \vspace{0.01in}
 
 \ind B.A., Best Overall Performance, Universidad Centroamericana, 2015.
 
-\ind \hspace{0.35in} \footnotesize Concentrations: Economic \& Territorial Development \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Concentrations: Economic \& Territorial Development. \normalsize \vspace{0.01in}
 
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% Publications
 %%%------------------------------------------------------------------------
@@ -285,85 +286,82 @@ Inaugural Conference–Nicaragua. 2015.
 
 \ind Central American Congress of Sociology–Panamá; Interdisciplinary Research Congress–Nicaragua. 2014. 
 
-\bigskip
+\medskip
 
 %%%------------------------------------------------------------------------
 %% Professional Experience
 %%%------------------------------------------------------------------------
-
 \marginhead{\sffamily professional \newline experience}
 
 \noindent\emph{\textbf{Teaching experience} \vspace{0.05in}}
 
-\ind The World Bank. \emph{Instructor}. 2020--. \newline \texttt{R training}.
+\ind The World Bank. \emph{Instructor}. 2020--. \newline \texttt{\href{https://github.com/worldbank/dime-r-training}{R training}} (\texttt{\href{https://rrmaximiliano.github.io/docs/evaluation-esh.pdf}{Evaluation}}). 
 
-\ind Lambda, Perú. \emph{Instructor}. 2020. \newline \texttt{Advanced Stata}. 
+\ind Lambda, Perú. \emph{Instructor}. 2020. \newline \texttt{\href{https://github.com/lambda-stata/course-materials}{Avdanced Stata for economists}}. 
 
-\ind Universidad Centroamericana. \emph{Adjunct Lecturer}. 2019. \newline \texttt{Social and Human Economy}.  
+\ind Universidad Centroamericana. \emph{Adjunct Lecturer}. 2019. \newline \texttt{\href{https://github.com/econsoc-uca}{Social and Human Economy}}.  
 
-\ind KDI School of Public Policy and Managemente. \emph{Teaching Assistant}. 2018.  \newline \texttt{Impact Evaluation Methods}. \newline \texttt{Foundations of Sustainable Development}. 
+\ind KDI School of Public Policy and Managemente. \emph{Teaching Assistant}. 2018.  \newline \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact Evaluation Methods}}. \newline \texttt{\color{DarkSlateBlue}{Foundations of Sustainable Development}}. 
 
 \medskip
 \noindent\emph{\textbf{Research assistantship} \vspace{0.05in}}
 
-\ind Development Impact Evaluation Unit -- The World Bank. 
+\ind Development Impact Evaluation Unit -- The World Bank. 2020-2021.
 
 \ind \hspace{0.35in} \footnotesize Project: Resolving Land Frictions to Increase Irrigation Use and On-Farm Productivity. \newline Country: Rwanda. \normalsize \vspace{0.01in}
 
-\ind Professor Mauricio Romero. ITAM -- IPA.
+\ind Professor Mauricio Romero. ITAM -- IPA. 2019-2020.
 
-\ind \hspace{0.35in} \footnotesize Project: Beyond Short-term Learning Gains: The Impact of Outsourcing Schools in Liberia after
+\ind \hspace{0.35in} \footnotesize Project: The Impact of Outsourcing Schools in Liberia after
 Three Years. \newline Country: Liberia. \normalsize \vspace{0.01in}
 
-\ind Professor Nathaniel Lane, University of Oxford.
+\ind Professor Nathaniel Lane, University of Oxford. 2019-2020.
 
 \ind \hspace{0.35in} \footnotesize Project: The Value of Names - Civil Society, Information, and Governing Multinationals on the
 Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
-\ind Professor Hee-Seung Yang, KDI School of Public Policy and Management.
+\ind Professor Hee-Seung Yang, KDI School of Public Policy and Management. 2018-2019.
 
-\ind \hspace{0.35in} \footnotesize Project: The long-term effects of the civil war in Nicaragua. \newline Country: Nicaragua. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Project: The Long-term Effects of the Civil War in Nicaragua. \newline Country: Nicaragua. \normalsize \vspace{0.01in}
 
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% Honors and Awards
 %%%------------------------------------------------------------------------
 \marginhead{\sffamily honors \newline \& awards}
 
-\ind KDI School of Public Policy and Management. 2018.
+\ind KDI School of Public Policy and Management. 2016-2018.
 
-\ind \hspace{0.35in} \footnotesize Academic Excellence Award. Outstanding Thesis Award. Student Community Service Award. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Dean's list with distinction. Academic Excellence Award. Outstanding Thesis Award. Student Community Service Award. \normalsize \vspace{0.01in}
 
-\ind KDI School of Public Policy and Management. 2016-2018. 
+\ind Best Student Performance Award. Universidad Centroamericana. 2015.
 
-\ind \hspace{0.35in} \footnotesize Dean's list with distinction. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Awarded by the Applied Economics Department for the highest GPA. \normalsize \vspace{0.01in}
 
-\ind Universidad Centroamericana. 2015.
+\ind Young Researchers $1^{st}$ place. Universidad Centroamericana. 2014. 
 
-\ind \hspace{0.35in} \footnotesize Best Student Performance Award, Awarded by the Applied Economics Department for the highest GPA. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández. \normalsize \vspace{0.01in}
 
-\ind Universidad Centroamericana. 2014. 
+\ind Young Researchers $3^{rd}$ place. Universidad Centroamericana. 2013. 
 
-\ind \hspace{0.35in} \footnotesize Young Researchers $1^{st}$ place. Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández. \normalsize \vspace{0.01in}
 
-\ind Universidad Centroamericana. 2013. 
-
-\ind \hspace{0.35in} \footnotesize Young Researchers $1^{st}$ place. Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández. \normalsize \vspace{0.01in}
-
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% Software Resources
 %%%------------------------------------------------------------------------
 \marginhead{\sffamily sofware \newline resources}
 
-\noindent\emph{\textbf{R packages} \vspace{0.05in}}
+\noindent\emph{\textbf{R} \vspace{0.05in}}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. An R package of tidy datasets related to the elections in Nicaragua from 1990 to 2006.
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/constitucionesNic}{constitucionesNic}}. An R package of tidy datasets related to the political constitutions of Nicaragua for text mining.
 
+\ind \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}. Shiny app with tidy datasets of the COVID-19 pandemic in Nicaragua.
+
 \medskip
-\noindent\emph{\textbf{Stata packages} \vspace{0.05in}}
+\noindent\emph{\textbf{Stata} \vspace{0.05in}}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}. A Stata package that generates balance tables.
 
@@ -376,7 +374,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/poblacion-nicaragua-siglo-18-19}{Nicaraguan population: 18th and 19th century.}} 
 
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% SKILLS
 %%%------------------------------------------------------------------------
@@ -395,7 +393,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
 \ind Spanish (native), English (TOEFL: 104), French (A2), Korean (TOPIK: 4).
 
-\bigskip
+\medskip
 %%%------------------------------------------------------------------------
 %% References
 %%%------------------------------------------------------------------------
