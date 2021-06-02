@@ -54,7 +54,7 @@
 \def\myauthor{Rony Rodriguez Ramirez}
 \def\mytitle{Vita}
 \def\mycopyright{\myauthor}
-\def\mykeywords{}
+\def\mykeywords{Rony, Rodriguez, Ramirez, Rony Rodriguez-Ramirez, Vita, CV, Resume}
 \def\mybibliostyle{plain}
 \def\mybibliocommand{}
 \def\mysubtitle{}
@@ -69,11 +69,7 @@
 \def\myversion{}
 \def\myrevision{}
 
-
-\def\myaffiliation{University of California, Irvine}
-\def\myauthor{Rony Rodriguez-Ramirez}
-\date{} % not used (revision control instead)
-\def\mykeywords{Rony, Rodriguez, Ramirez, Rony Rodriguez-Ramirez, Vita, CV, Resume}
+\date{}
 
 %%%------------------------------------------------------------------------  
 %%% Git version tracking 
@@ -105,10 +101,9 @@
 % Build the commit based on the information we now have
 \newcommand{\commitcode}{\texttt{\commitsix}}
 
+%%%------------------------------------------------------------------------  
+%%% Set fonts 
 %%%------------------------------------------------------------------------
-%%% Document
-%%%------------------------------------------------------------------------
-\begin{document}
 
 %% Choose fonts for use with xelatex
 %% Minion and Myriad are widely available, from Adobe. 
@@ -125,6 +120,7 @@
 \setmonofont[Mapping=tex-text,Scale=0.73]{Cascadia Mono} 
 
 \newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
+
 
 %%%------------------------------------------------------------------------
 %%% Local commands
@@ -145,7 +141,7 @@
 		\color{Maroon}% mimicing the current header color in use
 		#1%
 	}%
-	\vskip-1ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
+	\vskip-1.5ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
 }%
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
@@ -163,6 +159,11 @@
 %% Manual word breaks
 \hyphenation{Cen-troamericana}
 \hyphenation{Sungkyun-kwan}
+
+%%%------------------------------------------------------------------------
+%%% Document
+%%%------------------------------------------------------------------------
+\begin{document}
 
 %%%------------------------------------------------------------------------
 %%% Page layout
@@ -219,7 +220,7 @@
 %%%------------------------------------------------------------------------
 
 % \medskip
-\marginhead{\sffamily current \newline position}
+\marginhead{current \newline position}
 
 \ind Research Assistant, Development Impact Evaluation, The World Bank, 2019--.
 
@@ -227,7 +228,7 @@
 %%%------------------------------------------------------------------------
 %% Education
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily education}
+\marginhead{education}
 
 \ind M.A., Development Policy, KDI School of Public Policy and Management, 2018. 
 
@@ -241,9 +242,9 @@
 %%%------------------------------------------------------------------------
 %% Publications
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily publications \newline \& talks}
+\marginhead{publications \newline \& talks}
 
-\noindent\emph{\textbf{Books} \vspace{0.01in}}
+\noindent\emph{\textbf{Books} \vspace{0.05in}}
 
 \ind with Mario Sánchez \textit{\&} Douglas Castro. 2016. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Centro de Análisis Socio-Cultural. \vspace{0.05in} \normalsize
 
@@ -293,7 +294,7 @@ Inaugural Conference–Nicaragua. 2015.
 %%%------------------------------------------------------------------------
 %% Professional Experience
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily professional \newline experience}
+\marginhead{professional \newline experience}
 
 \noindent\emph{\textbf{Teaching experience} \vspace{0.05in}}
 
@@ -330,7 +331,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% Honors and Awards
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily honors \newline \& awards}
+\marginhead{honors \newline \& awards}
 
 \ind KDI School of Public Policy and Management. 2016-2018.
 
@@ -352,7 +353,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% Software Resources
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily sofware \newline resources}
+\marginhead{sofware \newline resources}
 
 \noindent\emph{\textbf{R} \vspace{0.05in}}
 
@@ -380,7 +381,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% SKILLS
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily Skills}
+\marginhead{Skills}
 
 \noindent\emph{\textbf{Softwares} \vspace{0.05in}}
 
@@ -399,7 +400,7 @@ Global Periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 %% References
 %%%------------------------------------------------------------------------
-\marginhead{\sffamily references}
+\marginhead{references}
 
 \noindent
 \begin{minipage}[t]{.5\textwidth}
