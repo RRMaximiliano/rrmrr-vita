@@ -1,11 +1,11 @@
 # Latex template for CV
 
-Based on  [Kieran Healy's CV](https://kieranhealy.org/vita.pdf) with edits (git, fonts, spacing, etc.)
+Based on  [Kieran Healy's CV](https://kieranhealy.org/vita.pdf) with edits (git, fonts, spacing, etc.). You can find my updated cv [here](https://rrmaximiliano.github.io/docs/rrmrr-vita.pdf)
 
 Fonts use:
 
-1. Minion Pro.
-2. JetBrains Mono
+1. Minion Pro
+2. Cascadia Mono
 3. Unit-Medium
 
 Git setup:
