@@ -72,6 +72,14 @@
 \date{}
 
 %%%------------------------------------------------------------------------  
+%%% Margins 
+%%%------------------------------------------------------------------------
+
+\setlrmarginsandblock{4cm}{2.5cm}{*}
+\setulmarginsandblock{3cm}{2.5cm}{*}
+\checkandfixthelayout 
+
+%%%------------------------------------------------------------------------  
 %%% Git version tracking 
 %%%------------------------------------------------------------------------
 
@@ -85,6 +93,8 @@
 % Two required libraries
 \usepackage{xstring}
 \usepackage{catchfile}
+\usepackage{tgpagella}
+%\usepackage[sc]{mathpazo}
 
 % Set user input
 \newcommand{\gitfolder}{.git}                             % Relative path to .git folder from .tex file
@@ -112,15 +122,18 @@
 %% Consolas or inconsolata are good alternatives.
 
 \setfontfamily{\FA}{[FontAwesome.otf]}
-\setromanfont[Mapping={tex-text}, 
-	Numbers={OldStyle},
-	Ligatures={Common}]{Minion Pro}
+% \setromanfont[Mapping={tex-text}, 
+% 	Numbers={OldStyle},
+% 	Ligatures={Common}]{Minion Pro}
+\setmainfont[
+ BoldFont=texgyrepagella-bold.otf,
+ ItalicFont=texgyrepagella-italic.otf,
+ BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
 \setsansfont[Mapping=tex-text,
-	Colour=AA0000]{Unit-Medium}
+	Colour=AA0000]{Yanone Kaffeesatz-Medium}
 \setmonofont[Mapping=tex-text,Scale=0.73]{Cascadia Mono} 
 
-\newfontface\scheader[SmallCapsFont={Minion Pro},SmallCapsFeatures={Letters=SmallCaps}]{Minion Pro}
-
+\newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
 
 %%%------------------------------------------------------------------------
 %%% Local commands
@@ -137,11 +150,11 @@
 	\mbox{\relax}% KEY command to make it possible to automatically keep inline with body text
 	\marginpar{%
 		\raggedright% now RIGHT justified to body text, comment out if prefer to be left justified
-		\footnotesize\sffamily%
+		\Large\sffamily%
 		\color{Maroon}% mimicing the current header color in use
 		#1%
 	}%
-	\vskip-1.5ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
+	\vskip-.65ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
 }%
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
@@ -157,8 +170,9 @@
 \renewcommand{\labelitemii}{~}
 
 %% Manual word breaks
-\hyphenation{Cen-troamericana}
-\hyphenation{Sungkyun-kwan}
+\hyphenation{Cen-tro-a-me-ri-ca-na}
+\hyphenation{Ni-ca-ra-gua}
+\hyphenation{Sung-kyun-kwan}
 
 %%%------------------------------------------------------------------------
 %%% Document
@@ -182,47 +196,32 @@
 %%%------------------------------------------------------------------------
 %%% Address and contact block
 %%%------------------------------------------------------------------------
-\begin{minipage}[t]{2.3in}
- \flushright {\scriptsize 
-      \href{https://www.worldbank.org/en/about/unit/unit-dec}{\scshape Development Research Group}  \\
-      The World Bank        \\
-      1818 H Street N.W.    \\
-      \vspace{-0.05in} Washington, DC 20433 
-  }  
-  
-\end{minipage}
-\hfill     
-%\begin{minipage}[t]{0.0in}
-% dummy (needed here)
-%\end{minipage}
-\hfill
-\begin{minipage}[t]{1.9in}
-  \flushright {\scriptsize 
-  \texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}} \, \faTwitter \\
-  \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faLink          \\
-  \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub    \\
-  \vspace{-0.05in}  \texttt{\href{\myemail}{\myemail}} \, \faAt                     
-  }
-\end{minipage}
-
-\medskip
 
 %%%------------------------------------------------------------------------
 %% Name 
 %%%------------------------------------------------------------------------
-\noindent{\LARGE\scheader \textsc{rony rodrigo maximiliano rodríguez-ramírez}}
+\noindent{\LARGE \textsc{Rony Rodrigo Maximiliano Rodríguez-Ramírez}}
 \reversemarginpar
 
-% \medskip       
+%%%------------------------------------------------------------------------
+%% Contact
+%%%------------------------------------------------------------------------
+
+\marginhead{contact}
+
+\footnotesize \noindent \href{https://www.worldbank.org/en/about/unit/unit-dec}{Development Research Group} \hfill \texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}} \, \faTwitter \newline \noindent The World Bank \hfill \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faLink \newline \noindent 1818 H Street, N.W. \hfill \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub \newline \noindent Washington, DC 20433 \hfill \texttt{\href{\myemail}{\myemail}} \, \faAt
+
+\medskip
 
 %%%------------------------------------------------------------------------
 %% Appointments
 %%%------------------------------------------------------------------------
-
 % \medskip
+\normalsize
+
 \marginhead{current \newline position}
 
-\ind Research Assistant, Development Research Group, The World Bank, 2021--.
+\ind Research Consultant, Development Research Group, The World Bank, 2021--Present
 
 \medskip
 %%%------------------------------------------------------------------------
@@ -242,21 +241,21 @@
 %%%------------------------------------------------------------------------
 %% Publications
 %%%------------------------------------------------------------------------
-\marginhead{publications \newline \& talks}
+\marginhead{publications}
 
-\noindent\emph{\textbf{Books} \vspace{0.05in}}
+\noindent\textsc{Books} \vspace{0.05in}
 
 \ind with Mario Sánchez \textit{\&} Douglas Castro. 2016. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Centro de Análisis Socio-Cultural. \vspace{0.05in} \normalsize
 
 \medskip
-\noindent\emph{\textbf{Working papers} \vspace{0.05in}}
+\noindent\textsc{Working Papers} \vspace{0.05in}
 
 \ind with Booyuel Kim \textit{\&} Hee-Seung Yang. ``Does the small business program benefit self-employed workers? Evidence from Nicaragua.'' revision requested from \textit{Journal of Development Effectiveness}.
 
 \ind with Booyuel Kim \textit{\&} Hee-Seung Yang. ``In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socio-economic outcomes.''
 
 \medskip
-\noindent\emph{\textbf{Journal articles} \vspace{0.05in}}
+\noindent\textsc{Journal Articles} \vspace{0.05in}
  
 %% Use revnumerate environment if numbered publications are needed. 
 %% (Include it above in the preamble).
@@ -272,22 +271,24 @@
 %\end{revnumerate}
 
 \medskip
-\noindent\emph{\textbf{Academic seminars \& conference presentations} \vspace{0.05in}}
 
-\ind AEA/ASSA; Universidad Centroamericana--Nicaragua. 2019.
+\marginhead{talks}
 
-\ind 3ie International Initiative for Impact Evaluation--KDI School joint Impact Evaluation Conference (Poster); KAEA-KEA Joint International Conference, Sungkyunkwan University–Republic of Korea; Korea and The World Economy, Jeju National
-University–Republic of Korea; Asian Meeting of the Econometric Society, Sogang University–Republic
-of Korea. 2018. 
+\noindent\textsc{Academic seminars \& conference presentations} \vspace{0.05in}
 
-\ind 20th Anniversary of KDI School, Poster Session–Republic of Korea; The Ronald Coase Workshop, Xiamen University–China. 2017. 
+\ind 2021~ The World Bank DIME--KDI School joint conference on Impact Evaluation in Sustainable and Inclusive Development.
 
-\ind Central American Congress of Sociology–Nicaragua. 2016. 
+\ind 2019~ Allied Social Science Association (ASSA) meetings; Universidad Centroamericana.
 
-\ind VI Ethics Conference, Universidad Centroamericana–Nicaragua; Interdisciplinary Research Congress,
-Inaugural Conference–Nicaragua. 2015. 
+\ind 2018~ 3ie International Initiative for Impact Evaluation--KDI School joint conrfence on Impact Evaluation; KAEA-KEA joint International Conference, Sungkyunkwan University; Korea and The World Economy, Jeju National; Asian Meeting of the Econometric Society, Sogang University.
 
-\ind Central American Congress of Sociology–Panamá; Interdisciplinary Research Congress–Nicaragua. 2014. 
+\ind 2017~ 20th Anniversary of KDI School (poster session); The Ronald Coase Workshop, Xiamen University. 
+
+\ind 2016~ Central American Congress of Sociology.
+
+\ind 2015~ VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Inaugural Conference.
+
+\ind 2014~ Central American Congress of Sociology; Interdisciplinary Research Congress.
 
 \medskip
 
@@ -296,37 +297,37 @@ Inaugural Conference–Nicaragua. 2015.
 %%%------------------------------------------------------------------------
 \marginhead{professional \newline experience}
 
-\noindent\emph{\textbf{Teaching experience} \vspace{0.05in}}
+\noindent\textsc{Teaching experience} \vspace{0.05in}
 
-\ind The World Bank. \emph{Instructor}. 2020--. \newline \texttt{\href{https://github.com/worldbank/dime-r-training}{R training}}. 
+\ind 2020--2021~ The World Bank. \emph{Instructor}. \texttt{\href{https://github.com/worldbank/dime-r-training}{R training}}. 
 
-\ind Lambda, Perú. \emph{Instructor}. 2020. \newline \texttt{\href{https://github.com/lambda-stata/course-materials}{Avdanced Stata for economists}}. 
+\ind 2020--2021~ Lambda Institute, Perú. \emph{Instructor}. \texttt{\href{https://github.com/lambda-stata/course-materials}{Avdanced Stata for economists}}. 
 
-\ind Universidad Centroamericana. \emph{Adjunct Lecturer}. 2019. \newline \texttt{\href{https://github.com/econsoc-uca}{Social and Human Economy}}.  
+\ind 2018~ Universidad Centroamericana. \emph{Adjunct Lecturer}. \texttt{\href{https://github.com/econsoc-uca}{Social and Human Economy}}. \texttt{\href{https://rrmaximiliano.github.io/docs/evaluation-esh.pdf}{Evaluation: 4.9/5}}.
 
-\ind KDI School of Public Policy and Managements. \emph{Teaching Assistant}. 2018.  \newline \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact Evaluation Methods}}. \newline \texttt{\color{DarkSlateBlue}{Foundations of Sustainable Development}}. 
+\ind 2018~ KDI School of Public Policy and Managements. \emph{Teaching Assistant}. \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact Evaluation Methods}}; \texttt{\color{DarkSlateBlue}{Foundations of Sustainable Development}}.
 
 \medskip
-\noindent\emph{\textbf{Research assistantship} \vspace{0.05in}}
+\noindent\textsc{Research assistanship} \vspace{0.05in}
 
-\ind Development Research Group -- The World Bank, 2021--
+\ind 2021--~ Development Research Group, Poverty and Inequality -- The World Bank.
 
 \ind \hspace{0.35in} \footnotesize Project: A sequential and adaptive experiment to increase the uptake of long-acting reversible contraceptives. \newline Country: Cameroon. \normalsize \vspace{0.01in}
 
-\ind Development Impact Evaluation Unit -- The World Bank. 2020-2021.
+\ind 2020-2021~ Development Impact Evaluation Unit -- The World Bank.
 
 \ind \hspace{0.35in} \footnotesize Project: Resolving land frictions to increase irrigation use and on-farm productivity. \newline Country: Rwanda. \normalsize \vspace{0.01in}
 
-\ind Professor Mauricio Romero. ITAM -- IPA. 2019-2020.
+\ind 2019-2020~ Professor Mauricio Romero. ITAM -- IPA.
 
 \ind \hspace{0.35in} \footnotesize Project: The impact of outsourcing schools in Liberia. \newline Country: Liberia. \normalsize \vspace{0.01in}
 
-\ind Professor Nathaniel Lane, University of Oxford. 2019-2020.
+\ind 2019-2020~ Professor Nathaniel Lane, University of Oxford. 
 
 \ind \hspace{0.35in} \footnotesize Project: The value of names - civil society, information, and governing multinationals on the
 global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
-\ind Professor Hee-Seung Yang, KDI School of Public Policy and Management. 2018-2019.
+\ind 2018-2019~ Professor Hee-Seung Yang, KDI School of Public Policy and Management.
 
 \ind \hspace{0.35in} \footnotesize Project: The long-term effects of the civil war in Nicaragua. \newline Country: Nicaragua. \normalsize \vspace{0.01in}
 
@@ -336,29 +337,31 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 \marginhead{honors \newline \& awards}
 
-\ind KDI School of Public Policy and Management. 2016-2018.
+\ind 2016--2018~ KDI School of Public Policy and Management.
 
-\ind \hspace{0.35in} \footnotesize Dean's list with distinction. Academic Excellence Award. Outstanding Thesis Award. \newline Student Community Service Award. \normalsize \vspace{0.01in}
+\ind \hspace{0.35in} \footnotesize Dean's list with distinction; Academic Excellence Award; Outstanding Thesis Award; Student Community Service Award. \normalsize \vspace{0.01in}
 
-\ind Best Student Performance Award. Universidad Centroamericana. 2015.
+\ind 2015~ Best Student Performance Award. Universidad Centroamericana.
 
 \ind \hspace{0.35in} \footnotesize Awarded by the Applied Economics Department for the highest GPA. \normalsize \vspace{0.01in}
 
-\ind Young Researchers $1^{st}$ place. Universidad Centroamericana. 2014. 
+\ind 2014~ Young Researchers $1^{st}$ place. Universidad Centroamericana.
 
 \ind \hspace{0.35in} \footnotesize Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández. \normalsize \vspace{0.01in}
 
-\ind Young Researchers $3^{rd}$ place. Universidad Centroamericana. 2013. 
+\ind 2013~ Young Researchers $3^{rd}$ place. Universidad Centroamericana.
 
 \ind \hspace{0.35in} \footnotesize Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández. \normalsize \vspace{0.01in}
 
 \medskip
+
 %%%------------------------------------------------------------------------
 %% Software Resources
 %%%------------------------------------------------------------------------
+
 \marginhead{sofware \newline resources}
 
-\noindent\emph{\textbf{R} \vspace{0.05in}}
+\noindent\textsc{R} \vspace{0.05in}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. An R package of tidy datasets related to the elections in Nicaragua from 1990 to 2006.
 
@@ -367,12 +370,12 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 \ind \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}. Shiny app with tidy datasets of the COVID-19 pandemic in Nicaragua.
 
 \medskip
-\noindent\emph{\textbf{Stata} \vspace{0.05in}}
+\noindent\textsc{Stata} \vspace{0.05in}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}. A Stata package that generates balance tables.
 
 \medskip
-\noindent\emph{\textbf{Selected GitHub repositories} \vspace{0.05in}}
+\noindent\textsc{Selected GitHub repositories} \vspace{0.05in}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/policia-nacional-nic-stats}{National crime rate in Nicaragua.}}
 
@@ -386,18 +389,18 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 %%%------------------------------------------------------------------------
 \marginhead{skills}
 
-\noindent\emph{\textbf{Softwares} \vspace{0.05in}}
+\noindent\textsc{Softwares} \vspace{0.05in}
 
-\ind Advanced: Stata, R, \LaTeX, Git.
+\ind Advanced: Stata, R, \LaTeX, Git(Hub).
 
 \ind Intermediate: ODK (SurveyCTO), Python.
 
 \ind Beginner: SQL. ArcGis.
 
 \medskip
-\noindent\emph{\textbf{Languages} \vspace{0.05in}}
+\noindent\textsc{Languages} \vspace{0.05in}
 
-\ind Spanish (native), English (TOEFL: 104), French (A2), Korean (TOPIK: 4).
+\ind Spanish (native), English (TOEFL: 114), French (A2), Korean (TOPIK: 4).
 
 \medskip
 %%%------------------------------------------------------------------------
