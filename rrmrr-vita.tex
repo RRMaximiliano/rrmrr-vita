@@ -40,7 +40,7 @@
 %%% remove these as needed.
 %%%------------------------------------------------------------------------
 
-\documentclass[11pt,article,oneside, a4paper]{memoir}   
+\documentclass[10pt,article,oneside,a4paper]{memoir}   
 \usepackage{org-preamble-xelatex} 
 \usepackage{fontawesome}
 \usepackage{url}
@@ -129,8 +129,7 @@
  BoldFont=texgyrepagella-bold.otf,
  ItalicFont=texgyrepagella-italic.otf,
  BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
-\setsansfont[Mapping=tex-text,
-	Colour=AA0000]{Yanone Kaffeesatz-Medium}
+\setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
 \setmonofont[Mapping=tex-text,Scale=0.73]{Cascadia Mono} 
 
 \newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
@@ -147,14 +146,15 @@
 
 \newcommand{\marginhead}[1]{%
 	\medskip%
+  \phantomsection\addcontentsline{toc}{section}{#1}% add info to TOC
 	\mbox{\relax}% KEY command to make it possible to automatically keep inline with body text
 	\marginpar{%
 		\raggedright% now RIGHT justified to body text, comment out if prefer to be left justified
-		\Large\sffamily%
-		\color{Maroon}% mimicing the current header color in use
+		\large\sffamily%
+		\color{darkblue}% mimicing the current header color in use
 		#1%
 	}%
-	\vskip-.65ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
+	\vskip-.95ex\relax% now lining at TOP with body text, change to 1.6ex to be lining at BOTTOM (of the same line)
 }%
 
 %% [optional] custom ampersand (font consistent with the one chosen above)
@@ -207,9 +207,10 @@
 %% Contact
 %%%------------------------------------------------------------------------
 
-\marginhead{contact}
+%\marginhead{contact}
+\medskip
 
-\footnotesize \noindent \href{https://www.worldbank.org/en/about/unit/unit-dec}{Development Research Group} \hfill \texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}} \, \faTwitter \newline \noindent The World Bank \hfill \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faLink \newline \noindent 1818 H Street, N.W. \hfill \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub \newline \noindent Washington, DC 20433 \hfill \texttt{\href{mailto:\myemail}{\myemail}} \, \faAt
+\normalsize \noindent \href{https://www.worldbank.org/en/about/unit/unit-dec}{Development Research Group} \hfill \texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}} \, \faTwitter \newline \noindent The World Bank \hfill \texttt{\href{https://rrmaximiliano.github.io}{\myweb}} \, \faLink \newline \noindent 1818 H Street, N.W. \hfill \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}} \, \faGithub \newline \noindent Washington, DC 20433 \hfill \texttt{\href{mailto:\myemail}{\myemail}} \, \faAt
 
 \medskip
 
@@ -219,7 +220,7 @@
 % \medskip
 \normalsize
 
-\marginhead{current \newline position}
+\marginhead{position}
 
 \ind Research Consultant, Development Research Group, The World Bank, 2021--Present
 
@@ -295,6 +296,8 @@
 %%%------------------------------------------------------------------------
 %% Professional Experience
 %%%------------------------------------------------------------------------
+\newpage
+
 \marginhead{professional \newline experience}
 
 \noindent\textsc{Teaching experience} \vspace{0.05in}
@@ -361,6 +364,12 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
 \marginhead{sofware \newline resources}
 
+\noindent\textsc{Replication Packages} \vspace{0.05in}
+
+\ind with Mauricio Romero and Justin Sandefur. ``Beyond Short-term Learning Gains: The Impact of Outsourcing Schools in Liberia after Three Years.'' Published at the \textit{Economic Journal}. DOI:\href{https://doi.org/10.5281/zenodo.5579799}{10.5281/zenodo.5579799}
+
+\medskip
+
 \noindent\textsc{R} \vspace{0.05in}
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. An R package of tidy datasets related to the elections in Nicaragua from 1990 to 2006.
@@ -371,6 +380,8 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
 \medskip
 \noindent\textsc{Stata} \vspace{0.05in}
+
+\ind \texttt{\href{https://github.com/RRMaximiliano/send\_est}{send\_est}}. A Stata package that send estimates to \LaTeX.
 
 \ind \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}. A Stata package that generates balance tables.
 
@@ -395,7 +406,7 @@ global periphery. \newline Country: Cross-countries. \normalsize \vspace{0.01in}
 
 \ind Intermediate: ODK (SurveyCTO), Python.
 
-\ind Beginner: SQL. ArcGis.
+\ind Beginner: SQL, ArcGis, C.
 
 \medskip
 \noindent\textsc{Languages} \vspace{0.05in}
