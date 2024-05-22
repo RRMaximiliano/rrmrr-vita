@@ -1,5 +1,4 @@
 % LaTeX Curriculum Vitae Template
-%
 % Copyright (C) 2004-2008 Jason Blevins <jrblevin@sdf.lonestar.org>
 % http://jblevins.org/projects/cv-template
 %
@@ -11,21 +10,30 @@
 
 \documentclass[a4paper, 10pt]{article}
 \usepackage{org-preamble}
-\usepackage{amsmath}
-\usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{color}
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webpurple}{rgb}{0.7,0,0.7}
+\usepackage{hyperref}
 % \usepackage{lmodern}
 % \usepackage[osf]{mathpazo}
 
 \hypersetup{
-  colorlinks,
-  urlcolor = darkblue,
-  pdfauthor={Rony Rodrigo Maximiliano Rodriguez Ramirez}
-  pdfkeywords={economics education development health},
-  pdftitle={Curriculum Vitae},
-  pdfsubject={Curriculum Vitae},
-  pdfpagemode=UseNone
-}
+  breaklinks = true,  
+  colorlinks=true, 
+  anchorcolor= webbrown, 
+  citecolor= webbrown,
+  filecolor= webbrown, 
+  linkcolor= webbrown, 
+  menucolor= webbrown,
+  urlcolor= webbrown, 
+  citebordercolor= 1 0 0, 
+  menubordercolor=1 0 0, 
+  urlbordercolor=1 0 0, 
+  runbordercolor=1 0 0 }
+\hypersetup{pdfauthor=Rony Rodriguez-Ramirez}
 
 \geometry{textheight=9.25in, textwidth=7.25in}
 
@@ -73,6 +81,9 @@
 \def\mytwitter{@rrmaximiliano}
 \def\mygithub{github.com/RRMaximiliano}
 
+
+\usepackage{float}
+\usepackage{adjustbox}
 %%%------------------------------------------------------------------------  
 %%% Set fonts 
 %%%------------------------------------------------------------------------
@@ -82,8 +93,9 @@
 %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
+\usepackage{fontspec}
 \usepackage{fontawesome}
-\setfontfamily{\FA}{[FontAwesome.otf]}
+% \setfontfamily{\FA}{[FontAwesome.otf]}
 % \setromanfont[Mapping={tex-text}, 
 % 	Numbers={OldStyle},
 % 	Ligatures={Common}]{Minion Pro}
@@ -91,7 +103,7 @@
  BoldFont=texgyrepagella-bold.otf,
  ItalicFont=texgyrepagella-italic.otf,
  BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
-\setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
+% \setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
 \setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro-R_1.3.otf}
 
 \newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
@@ -173,15 +185,15 @@ of Education)}
   \end{enumerate}
 \end{itemize}
 
-\section*{Current Employment}
-\begin{itemize}
-\item Development Research Group, The World Bank \hfill 2021--Present \\
-{\small \textit{Research Consultant} }
-  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
-    \item {\small \textbf{Project:} A sequential and adaptive experiment to increase the uptake of long-acting reversible contraceptives.} \\ {\small \textbf{PI:} Berk Özler; \textbf{Co-PIs:} Susan Athey, Julian C. Jamison.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/3514}{AEARCTR-0003514}}
-    \item {\small \textbf{Project:} Tech-enabled tutoring for learning re-engagement and recovery for adolescents in Ukraine.} \\ {\small \textbf{PI:} Lelys Dinarte; \textbf{Co-PIs}: Renata Freita Lemos.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/9328}{AEARCTR-0009328}}
-  \end{enumerate}  
-\end{itemize}
+% \section*{Current Employment}
+% \begin{itemize}
+% \item Development Research Group, The World Bank \hfill 2021--Present \\
+% {\small \textit{Research Consultant} }
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+%     \item {\small \textbf{Project:} A sequential and adaptive experiment to increase the uptake of long-acting reversible contraceptives.} \\ {\small \textbf{PI:} Berk Özler; \textbf{Co-PIs:} Susan Athey, Julian C. Jamison.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/3514}{AEARCTR-0003514}}
+%     \item {\small \textbf{Project:} Tech-enabled tutoring for learning re-engagement and recovery for adolescents in Ukraine.} \\ {\small \textbf{PI:} Lelys Dinarte; \textbf{Co-PIs}: Renata Freita Lemos.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/9328}{AEARCTR-0009328}}
+%   \end{enumerate}  
+% \end{itemize}
 
 
 
@@ -190,25 +202,17 @@ of Education)}
 %% RESEARCH WORK
 %% -------------------------------------------------------------------------------------------------
 
-\section*{Research Work}
-
-\subsection*{Working Papers}
-
-%% Working Papers
-\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item with Booyuel Kim \textit{\&} Hee-Seung Yang. ``In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socio-economic outcomes.''
-\item with Lelys Dinarte-Diaz, James Gresham, Renata Lemos, \textit{\&} Harry
-Patrinos. ``Online Tutoring in Pandemic and Conflict-affected Ukraine''
-\end{enumerate}
+\section*{Research}
 
 %% Books
-\subsection*{Book}
+\subsection*{Books}
 
 \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item In Press. with Emiliana Vegas \textit{\&} Álvaro Hofflinger. ``Chile
-Chapter'' in \textit{Learning Post Corona: What It Will take to Finally Improve
+\item In Press. with Emiliana Vegas \textit{\&} Álvaro Hofflinger. ``From
+Closure to Recovery: Tracing the Educational Impact of COVID-19 in Chile'' in
+\textit{Learning Post Corona: What It Will take to Finally Improve
 National Education Systems Where We Are and How Can We Move Forward After PISA
-2022}, (Eds.) Harry Patrinos \textit{\&} Nuno Crato. Washington D.C.
+2022}, (Eds.) Harry Patrinos \textit{\&} Nuno Crato. Washington D.C.: Springer.
 \item 2016. with Mario Sánchez \textit{\&} Douglas Castro. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Managua: Centro de Análisis Socio-Cultural.
 \end{enumerate}
 
@@ -227,11 +231,20 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 \item 2015. with Carol Siero \textit{\&} Sebastián Hernández. ``\href{http://www.uca.edu.ni/2/images/Revista-Encuentro/Revistas/e102/art-5.pdf}{Has the international cooperation been important for development and economic growth? Panel Evidence on Nicaragua and Central America},'' (in Spanish). \emph{Encuentro}, (102), 52--74.
 \end{enumerate}
 
+\subsection*{Working Papers}
+
+%% Working Papers
+\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+\item with Booyuel Kim \textit{\&} Hee-Seung Yang. ``In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socio-economic outcomes.''
+\item with Lelys Dinarte-Diaz, James Gresham, Renata Lemos, \textit{\&} Harry
+Patrinos. ``Online Tutoring in Pandemic and Conflict-affected Ukraine''
+\end{enumerate}
 
 %% Work in Progress
-\subsection*{Work in Progress}
+\subsection*{Selected Work in Progress}
 
 \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+  \item with Jostin Kitmang. ``The Role of Selective Public Universities in Shaping Long-Term Outcome.''
   \item with Berk Özler, Katy Bergstrom, \textit{\&} Luca Parisotto. ``Shared decision-making: Does quality of care affect contraceptive use?''
   \item ``Abortion Ban and Socioeconomic Outcomes: Evidence from Nicaragua.''
 \end{enumerate}
@@ -249,6 +262,18 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 
 \section*{Professional Experience}
 
+\subsection*{Current Research Assistanship}
+
+\begin{itemize}
+  \item Research Assistant to Professor Dan Levy, Harvard University
+  \hfill 2024--Present
+  \item Research Assistant to Professor Emiliana Vegas, Harvard University
+  \hfill 2023--Present
+  \item Research Assistant to Dr. Álvaro Hofflinger, DRCLAS Harvard University
+  \& Arizona State University
+  \hfill 2023--Presentx
+\end{itemize}
+
 \subsection*{Research Experience}
 
 \begin{itemize}
@@ -258,6 +283,8 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
     \textbf{Country}: Cameroon} 
     \item {\small \textbf{Project}: Tech-enabled tutoring for learning re-engagement and recovery for adolescents in Ukraine. \newline 
     \textbf{Country}: Ukraine}
+    \item {\small \textbf{Project}: Mental health and psychosocial support in Armenian schools. \newline 
+    \textbf{Country}: Armenia}    
   \end{enumerate}
   \item Research Consultant--Development Impact Evaluation (DIME), The World Bank \hfill 2020--2021 
   \begin{enumerate}[leftmargin=10pt, label={}, nosep]  
@@ -285,7 +312,11 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
  
   \item Universidad Centroamericana, Nicaragua \hfill 2018 \\ {\small \emph{Adjunct Lecturer}.} \texttt{\href{https://github.com/econsoc-uca}{Social and Human Economy}}. \texttt{\href{https://rrmaximiliano.github.io/docs/evaluation-esh.pdf}{Evaluation: 4.9/5}}
   
-  \item KDI School of Public Policy and Management, Republic of Korea \hfill 2017-2018 \\ {\small \emph{Teaching Assistant}.} \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact Evaluation Methods}}; \texttt{\color{darkblue}{Foundations of Sustainable Development}}
+  \item KDI School of Public Policy and Management, Republic of Korea \hfill
+  2017-2018 \\ {\small \emph{Teaching Assistant}.}
+  \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact
+  Evaluation Methods}}; \texttt{\textcolor{webbrown}{Foundations of Sustainable
+  Development}}
 \end{itemize}
 
 % \subsection*{Courses and Certifications}
@@ -303,7 +334,19 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 \section*{Seminars \textit{\&} Conference Presentations}
 
 \begin{itemize}
-  \item \textbf{2023.} Stata Conference. \textbf{2021.} The World Bank DIME--KDI School joint conference on Impact Evaluation in Sustainable and Inclusive Development. \textbf{2019.} Allied Social Science Association (ASSA) meetings; Universidad Centroamericana. \textbf{2018.} 3ie International Initiative for Impact Evaluation--KDI School joint conference on Impact Evaluation; KAEA-KEA joint International Conference, Sungkyunkwan University; Korea and The World Economy, Jeju National; Asian Meeting of the Econometric Society, Sogang University. \textbf{2017.} 20th Anniversary of KDI School (poster session); The Ronald Coase Workshop, Xiamen University. \textbf{2016.} Central American Congress of Sociology. \textbf{2015.} VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
+  \item 2023. Stata Conference. 
+  \item 2021. The World Bank DIME--KDI School joint conference on
+  Impact Evaluation in Sustainable and Inclusive Development. 
+  \item 2019. Allied Social Science Association (ASSA) meetings;
+  Universidad Centroamericana. 
+  \item 2018. 3ie International Initiative for Impact Evaluation--KDI
+  School joint conference on Impact Evaluation; KAEA-KEA joint International
+  Conference, Sungkyunkwan University; Korea and The World Economy, Jeju
+  National; Asian Meeting of the Econometric Society, Sogang University. 
+  \item 2017. 20th Anniversary of KDI School (poster session); The
+  Ronald Coase Workshop, Xiamen University. 
+  \item 2016. Central American Congress of Sociology. 
+  \item 2015. VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
 \end{itemize}
 
 %% -------------------------------------------------------------------------------------------------
@@ -338,6 +381,31 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
   inequality.
   \newline \texttt{\href{https://github.com/worldbank/stata-linter}
   {stata\_linter}}. Opinionated detector that attempts to improve readability of Stata do files. \newline \texttt{\href{https://github.com/RRMaximiliano/send\_est}{send\_est}}. Sends estimates to \LaTeX. \newline \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}. Generates balance tables.
+   \item \textbf{Selected GitHub Repositories and Data Initiatives}
+   \newline U.S. Customs and Border Protection (CBP) Data of Nicaraguan Migrants \href{https://github.com/RRMaximiliano/migrants_usbp}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Created a repositories contained information of all Nicaraguans that have been detained at the U.S. borders.
+   \end{enumerate}
+   National Police of Nicaragua Data repository \href{https://github.com/RRMaximiliano/policia-nacional-nic-stats}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Wrote a code that scrape information from officials reports from the National Police of Nicaragua. The extracted data contains information for type of crime, complaints, and solved cases in Nicaragua from 1980 to 2019. First tidy dataset that is available to the public on crime in Nicaragua at the department level. 
+   \end{enumerate}
+   Coronavirus Data repository for Nicaragua \href{https://github.com/RRMaximiliano/observatorio-covid-nicaragua}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Scraped information from the Observatorio Ciudadano de Nicaragua (Non-official information on the current state of COVID-19 in Nicaragua) that allows users to use the datasets and plot information at the national and department level. 
+   \end{enumerate}
+   Nicaragua Rulers \href{https://github.com/RRMaximiliano/observatorio-covid-nicaragua}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Hand-coded information on all the rulers of Nicaragua. Currently, the data in this repository contains information from the year 1508 to 2020. First tidy dataset that is available to the public on Nicaraguan rulers.
+   \end{enumerate}
+   Nicaraguan Population 18th and 19th Centuries \href{https://github.com/RRMaximiliano/poblacion-nicaragua-siglo-18-19}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Hand-code information form archives on the Nicaraguan population in the 18th and 19th Centuries.
+   \end{enumerate}
+   Best Practices for Data and Code Management \href{https://github.com/RRMaximiliano/practicas-datos-codigos}{\faGithub}
+   \begin{enumerate}[label = {-}]
+    \item Translated to Spanish the document ``Best Practices for Data and Code Management'' by Innovations for Poverty Action (IPA).
+   \end{enumerate}
 \end{itemize}
 
 %% -------------------------------------------------------------------------------------------------
@@ -346,7 +414,8 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 
 \section*{Skills}
 \begin{itemize}
-\item \textbf{Software.} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK (SurveyCTO) \\
+\item \textbf{Software.} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK
+(SurveyCTO, KoboToolbox) \\
 Intermediate: Python \\
 Beginner: SQL, ArcGis, C, Java.
 \item \textbf{Language.} \newline Spanish (native), English (fluent), French

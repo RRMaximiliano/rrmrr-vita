@@ -1,0 +1,373 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2008 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[a4paper, 10pt]{article}
+\usepackage{org-preamble}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+% \usepackage{lmodern}
+% \usepackage[osf]{mathpazo}
+
+\hypersetup{
+  colorlinks,
+  urlcolor = darkblue,
+  pdfauthor={Rony Rodrigo Maximiliano Rodriguez Ramirez}
+  pdfkeywords={economics education development health},
+  pdftitle={Curriculum Vitae},
+  pdfsubject={Curriculum Vitae},
+  pdfpagemode=UseNone
+}
+
+\geometry{textheight=9.25in, textwidth=7.25in}
+
+% Customize section headings
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\scshape\large}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+\setlength\parskip{0.5em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}
+    { \setlength{\itemsep}{5pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\topsep}{0pt}
+      \setlength{\leftmargin}{0em} } }{
+  \end{list}}
+
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% used below in the hyperref declaration and address banner section.
+\def\myauthor{Rony Rodriguez Ramirez}
+\def\mytitle{Vita}
+\def\mycopyright{\myauthor}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{The World Bank}
+\def\myaddress{DECPI}
+\def\myemail{rrodriguezramirez@g.harvard.edu}
+\def\myweb{rrmaximiliano.github.io}
+\def\myphone{(202) 876-6568}
+\def\mytwitter{@rrmaximiliano}
+\def\mygithub{github.com/RRMaximiliano}
+
+%%%------------------------------------------------------------------------  
+%%% Set fonts 
+%%%------------------------------------------------------------------------
+
+%% Choose fonts for use with xelatex
+%% Minion and Myriad are widely available, from Adobe. 
+%% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
+%% and is worth every penny. Any good monospace font will work fine, though.
+%% Consolas or inconsolata are good alternatives.
+\usepackage{fontawesome}
+\setfontfamily{\FA}{[FontAwesome.otf]}
+% \setromanfont[Mapping={tex-text}, 
+% 	Numbers={OldStyle},
+% 	Ligatures={Common}]{Minion Pro}
+\setmainfont[
+ BoldFont=texgyrepagella-bold.otf,
+ ItalicFont=texgyrepagella-italic.otf,
+ BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
+% \setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
+\setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro-R_1.3.otf}
+
+\newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
+
+%%%------------------------------------------------------------------------  
+%%% Footer and Headers
+%%%------------------------------------------------------------------------
+
+% Make the style for vc-git revision control headers and footers
+\usepackage[datesep=/]{datetime2}
+% \DTMsetstyle{iso}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{empty}{%
+  \fancyhf{}% Clear header/footer
+  \fancyfoot[C]{\scshape \thepage}
+  \fancyfoot[R]{{\normalsize \texttt{Updated with commit \href{https://github.com/RRMaximiliano/rrmrr-vita/tree/\commithash}{\commitcode}\ on \today}}}
+}
+
+%%%------------------------------------------------------------------------  
+%%% Cut Words
+%%%------------------------------------------------------------------------
+\hyphenation{Cen-tro-a-me-ri-ca-na}
+\hyphenation{Ni-ca-ra-gua}
+\hyphenation{Sung-kyun-kwan}
+
+%%%------------------------------------------------------------------------  
+%%% Begin Document
+%%%------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+
+\vspace*{-7em}
+
+\begin{center}
+  {\Large\bf RONY RODRIGO MAXIMILIANO RODRÍGUEZ--RAMÍREZ} \\
+  6 Appian Way, Cambridge, MA 02138  \\
+  %\texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}}\, \faTwitter \, 
+  \texttt{\href{https://rrmaximiliano.github.io}{\myweb}}\, \faLink \, \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}}\, \faGithub \, \texttt{\href{mailto:\myemail}{\myemail}}\, \faEnvelope
+\end{center}
+
+%% -------------------------------------------------------------------------------------------------
+%% SECTIONS
+%% -------------------------------------------------------------------------------------------------
+
+%% -------------------------------------------------------------------------------------------------
+%% EDUCATION
+%% -------------------------------------------------------------------------------------------------
+
+\section*{Education}
+
+\begin{itemize}
+%% Graduate studies
+\item Ph.D. Harvard University \hfill 2027 (expected) \\
+{\small \textit{Education Policy \& Program Evaluation} (Field Course: Economics
+of Education)}
+  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+    \item {\small \textbf{Awards}: Harvard University Presidential Fellow }
+  \end{enumerate}
+
+%% Graduate studies
+\item M.Sc. KDI School of Public Policy and Management, Republic of Korea \hfill 2018 \\
+{\small \textit{Development Policy} (Summa Cum Laude)}
+  
+  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+    \item {\small \textbf{Thesis:} Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua. \\ 
+    \textbf{Awards:} Outstanding Thesis Award, Academic Excellence Award \\ 
+    \textbf{Concentrations:} Sustainable Development \textit{\&} Global Governance and Political Economy }
+  \end{enumerate}
+%% Undergraduate  
+\item B.Sc. Universidad Centroamericana, Nicaragua \hfill 2015 \\
+{\small \textit{Applied Economics} (Magna Cum Laude, Best Student Overall Performance, Top 1\%)}
+  
+  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+    \item {\small \textbf{Concentrations:} Economic \textit{\&} Territorial Development}
+  \end{enumerate}
+\end{itemize}
+
+% \section*{Current Employment}
+% \begin{itemize}
+% \item Development Research Group, The World Bank \hfill 2021--Present \\
+% {\small \textit{Research Consultant} }
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+%     \item {\small \textbf{Project:} A sequential and adaptive experiment to increase the uptake of long-acting reversible contraceptives.} \\ {\small \textbf{PI:} Berk Özler; \textbf{Co-PIs:} Susan Athey, Julian C. Jamison.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/3514}{AEARCTR-0003514}}
+%     \item {\small \textbf{Project:} Tech-enabled tutoring for learning re-engagement and recovery for adolescents in Ukraine.} \\ {\small \textbf{PI:} Lelys Dinarte; \textbf{Co-PIs}: Renata Freita Lemos.} {\small AEA RCT registry: \href{https://www.socialscienceregistry.org/trials/9328}{AEARCTR-0009328}}
+%   \end{enumerate}  
+% \end{itemize}
+
+
+
+
+%% -------------------------------------------------------------------------------------------------
+%% RESEARCH WORK
+%% -------------------------------------------------------------------------------------------------
+
+\section*{Research Work}
+
+\subsection*{Working Papers}
+
+%% Working Papers
+\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+\item with Booyuel Kim \textit{\&} Hee-Seung Yang. ``In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socio-economic outcomes.''
+\item with Lelys Dinarte-Diaz, James Gresham, Renata Lemos, \textit{\&} Harry
+Patrinos. ``Online Tutoring in Pandemic and Conflict-affected Ukraine''
+\end{enumerate}
+
+%% Books
+\subsection*{Books and Chapters}
+
+\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+\item In Press. with Emiliana Vegas \textit{\&} Álvaro Hofflinger. ``Chile
+Chapter'' in \textit{Learning Post Corona: What It Will take to Finally Improve
+National Education Systems Where We Are and How Can We Move Forward After PISA
+2022}, (Eds.) Harry Patrinos \textit{\&} Nuno Crato. Washington D.C.
+\item 2016. with Mario Sánchez \textit{\&} Douglas Castro. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Managua: Centro de Análisis Socio-Cultural.
+\end{enumerate}
+
+%% Non econ journal articles
+\subsection*{Journal Articles}
+
+\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+\item 2024. with Booyuel Kim \textit{\&} Hee-Seung Yang. ``\href{https://www.tandfonline.com/doi/full/10.1080/19439342.2023.2300138}{Does the small business
+  program benefit self-employed workers? Evidence from Nicaragua.}''
+  \textit{Journal of Development Effectiveness}. DOI: 10.1080/19439342.2023.2300138
+
+\item 2020. with Hloreley Osorio. ``\href{https://revistas.ucr.ac.cr/index.php/anuario/article/view/45081/44860}{Criticism and Crisis in Nicaragua: The tension between Democracy and Capitalism},'' (in Spanish). \emph{Anuario de Estudios Centroamericanos, 46}, 1-42.
+
+\item 2016. with Mario Sánchez, Douglas Castro, \textit{\&} Jorge Guerra. ``\href{https://amnis.revues.org/2813}{Social movements and collective action in Nicaragua: between identity, autonomy and subordination},'' (in Spanish). \emph{Amnis}, (15).
+
+\item 2015. with Carol Siero \textit{\&} Sebastián Hernández. ``\href{http://www.uca.edu.ni/2/images/Revista-Encuentro/Revistas/e102/art-5.pdf}{Has the international cooperation been important for development and economic growth? Panel Evidence on Nicaragua and Central America},'' (in Spanish). \emph{Encuentro}, (102), 52--74.
+\end{enumerate}
+
+
+%% Work in Progress
+% \subsection*{Work in Progress}
+
+% \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+%   \item with Berk Özler, Katy Bergstrom, \textit{\&} Luca Parisotto. ``Shared decision-making: Does quality of care affect contraceptive use?''
+%   \item ``Abortion Ban and Socioeconomic Outcomes: Evidence from Nicaragua.''
+% \end{enumerate}
+
+%% Reports
+% \subsection*{Reports}
+
+% \begin{itemize}
+%   \item 2022. The World Bank.``\href{https://documents1.worldbank.org/curated/en/099025312242111019/pdf/P1699940bcc13001a083820804f74e8151b.pdf}{Improving the well-being of adolescent girls in developing countries}.'' Washington, D.C.
+% \end{itemize}
+
+%% -------------------------------------------------------------------------------------------------
+%% PROFESSIONAL EXPERIENCE: RESEARCH PLUS TEACHING
+%% -------------------------------------------------------------------------------------------------
+
+% \section*{Professional Experience}
+
+% \subsection*{Research Experience}
+
+% \begin{itemize}
+%   \item Research Consultant--Development Research Group, Poverty and Inequality, The World Bank \hfill 2021--Present 
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+%     \item {\small \textbf{Project}: A sequential and adaptive experiment to increase the uptake of long-acting reversible contraceptives. \newline 
+%     \textbf{Country}: Cameroon} 
+%     \item {\small \textbf{Project}: Tech-enabled tutoring for learning re-engagement and recovery for adolescents in Ukraine. \newline 
+%     \textbf{Country}: Ukraine}
+%   \end{enumerate}
+%   \item Research Consultant--Development Impact Evaluation (DIME), The World Bank \hfill 2020--2021 
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]  
+%     \item {\small \textbf{Project}: Resolving land frictions to increase irrigation use and on-farm productivity. \newline \textbf{Country}: Rwanda.}
+%   \end{enumerate}
+%   \item Research Assistant to Professor Mauricio Romero. ITAM -- IPA. \hfill 2019--2020  
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]  
+%     \item {\small \textbf{Project}: The impact of outsourcing schools in Liberia. \newline \textbf{Country}: Liberia.}
+%   \end{enumerate}
+%   \item Research Assistant to Professor Nathaniel Lane, University of Oxford \hfill 2019--2020  
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]  
+%     \item {\small \textbf{Project}: The value of names - civil society, information, and governing multinationals on the global periphery. \\ \textbf{Country}: Cross-countries.}
+%   \end{enumerate}
+%   \item Research Assistant to Professor Hee-Seung Yang, KDI School of Public Policy and Management \hfill 2018--2019  
+%   \begin{enumerate}[leftmargin=10pt, label={}, nosep]  
+%     \item {\small \textbf{Project}: The long-term effects of the civil war in Nicaragua. \newline \textbf{Country}: Nicaragua.}
+%   \end{enumerate}
+% \end{itemize}
+
+% \subsection*{Teaching Experience}
+% \begin{itemize}
+%   \item The World Bank, Washington DC \hfill 2021--Present \\  {\small \emph{Instructor}.} \texttt{\href{https://github.com/worldbank/dime-r-training}{R for Stata Users}, \href{https://github.com/dime-worldbank/rrf-course}{\texttt{Reproducible Research Fundamentals}}}
+
+%   \item Lambda Institute, Perú \hfill 2020--Present \\ {\small \emph{Instructor}.} \texttt{\href{https://github.com/lambda-stata/course-materials}{Advanced Stata for economists}}; \href{https://github.com/lambda-stata/econometria-avanzada}{\texttt{Advanced Methods in Econometrics: Impact Evaluation}}
+ 
+%   \item Universidad Centroamericana, Nicaragua \hfill 2018 \\ {\small \emph{Adjunct Lecturer}.} \texttt{\href{https://github.com/econsoc-uca}{Social and Human Economy}}. \texttt{\href{https://rrmaximiliano.github.io/docs/evaluation-esh.pdf}{Evaluation: 4.9/5}}
+  
+%   \item KDI School of Public Policy and Management, Republic of Korea \hfill 2017-2018 \\ {\small \emph{Teaching Assistant}.} \texttt{\href{https://www.dropbox.com/home/teaching_materials/kdischool/spring_2018_impact_evaluation}{Impact Evaluation Methods}}; \texttt{\color{darkblue}{Foundations of Sustainable Development}}
+% \end{itemize}
+
+% \subsection*{Courses and Certifications}
+% \begin{itemize}
+%   \item Universidad de los Andes, Colombia \hfill 2021 \\
+%   {\small \textit{Real Analysis}}
+%   \item The World Bank, Washington DC \hfill 2022 \\
+%   {\small \textit{Manage Successful Impact Evaluation Surveys}}
+% \end{itemize}
+
+%% -------------------------------------------------------------------------------------------------
+%% HONORS and AWARDS
+%% -------------------------------------------------------------------------------------------------
+
+% \section*{Seminars \textit{\&} Conference Presentations}
+
+% \begin{itemize}
+%   \item \textbf{2023.} Stata Conference. \textbf{2021.} The World Bank DIME--KDI School joint conference on Impact Evaluation in Sustainable and Inclusive Development. \textbf{2019.} Allied Social Science Association (ASSA) meetings; Universidad Centroamericana. \textbf{2018.} 3ie International Initiative for Impact Evaluation--KDI School joint conference on Impact Evaluation; KAEA-KEA joint International Conference, Sungkyunkwan University; Korea and The World Economy, Jeju National; Asian Meeting of the Econometric Society, Sogang University. \textbf{2017.} 20th Anniversary of KDI School (poster session); The Ronald Coase Workshop, Xiamen University. \textbf{2016.} Central American Congress of Sociology. \textbf{2015.} VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
+% \end{itemize}
+
+%% -------------------------------------------------------------------------------------------------
+%% HONORS and AWARDS
+%% -------------------------------------------------------------------------------------------------
+
+% \section*{Honors \textit{\&} Awards}
+% \begin{itemize}
+% \item Harvard University \hfill 2023 \\ {\small Presidential Scholar}
+% \item KDI School of Public Policy and Management. \hfill 2016--2018 \\ {\small Dean's list with distinction; Academic Excellence Award; Outstanding Thesis Award; Student Community Service Award.}
+% \item Korean Government Scholarship Program (KGSP), Government of Korea \hfill 2015-2018 \\ {\small Scholarship to pursue Master's studies. First Nicaraguan to be granted the scholarship.}
+% \item Universidad Centroamericana. \hfill 2015 \\ {\small  Best Student Performance Award. Awarded by the Applied Economics Department for the highest GPA.}
+% \item Universidad Centroamericana \hfill 2014 \\ {\small Young Researchers $1^{\textrm{st}}$ place. Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández.}
+% \item Universidad Centroamericana \hfill 2013 \\ {\small Young Researchers $3^{\textrm{rd}}$ place. Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández. }
+% \end{itemize}
+
+
+% %% -------------------------------------------------------------------------------------------------
+% %% SOFTWARES RESOURCES
+% %% -------------------------------------------------------------------------------------------------
+% \section*{Software Development}
+
+% \begin{itemize}
+%   \item \textbf{Replication Packages}.
+%   \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+%     \item with Mauricio Romero and Justin Sandefur. ``Beyond Short-term Learning Gains: The Impact of Outsourcing Schools in Liberia after Three Years.'' Published at the \textit{Economic Journal}. DOI:\href{https://doi.org/10.5281/zenodo.5579799}{10.5281/zenodo.5579799}
+%   \end{enumerate}
+%   \item \textbf{R Packages}. \newline \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. Tidy datasets related to the elections in Nicaragua from 1990 to 2020. \newline \texttt{\href{https://github.com/RRMaximiliano/constitucionesNic}{constitucionesNic}}. Tidy datasets related to the political constitutions of Nicaragua for text mining. \newline \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}. Shiny app with tidy datasets of the COVID-19 pandemic in Nicaragua.
+%   \item \textbf{Stata Packages}. \newline
+%   \texttt{\href{https://github.com/RRMaximiliano/welfarefactor}{welfarefactor}}.
+%   A new distribution sensitive index for measuring welfare, poverty, and
+%   inequality.
+%   \newline \texttt{\href{https://github.com/worldbank/stata-linter}
+%   {stata\_linter}}. Opinionated detector that attempts to improve readability of Stata do files. \newline \texttt{\href{https://github.com/RRMaximiliano/send\_est}{send\_est}}. Sends estimates to \LaTeX. \newline \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}. Generates balance tables.
+% \end{itemize}
+
+%% -------------------------------------------------------------------------------------------------
+%% LANGUAGE ANS SOFTWARE RESOURCES
+%% -------------------------------------------------------------------------------------------------
+
+\section*{Skills}
+\begin{itemize}
+\item \textbf{Software.} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK (SurveyCTO) \\
+Intermediate: Python \\
+Beginner: SQL, ArcGis, C, Java.
+\item \textbf{Language.} \newline Spanish (native), English (fluent), French
+(C1), Korean (TOPIK 4), Nicaraguan Sign Language (LSN, Intermediate), Latin
+(Beginner).
+\end{itemize}
+\bigskip
+
+
+% \section*{References}
+% \begin{itemize}
+%   \item Berk Özler, Ph.D. \hfill Mauricio Romero, Ph.D. \\
+%   Lead Economist and Research Manager \hfill Assistant Professor \\
+%   Development Research Group, The World Bank \hfill Instituto Tecnológico Autónomo de México \\
+%   \texttt{\href{mailto:bozler@worldbank.org}{bozler@worldbank.org}} \hfill \texttt{\href{mailto:mtromero@itam.mx}{mtromero@itam.mx}}
+%   \item Booyuel Kim, Ph.D. \hfill Hee-Seung Yang, Ph.D. \\
+%   Associate Professor \hfill Associate Professor \\
+%   Seoul National University \hfill Yonsei University \\
+%   \texttt{\href{mailto:booyuel@snu.ac.kr}{booyuel@snu.ac.kr}} \hfill \texttt{\href{mailto:heeseung.yang@yonsei.ac.kr}{heeseung.yang@yonsei.ac.kr}}
+% \end{itemize}
+
+\end{document}
