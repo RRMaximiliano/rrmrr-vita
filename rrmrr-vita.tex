@@ -8,9 +8,10 @@
 % this notice and the above URL in the source code if you choose to
 % redistribute this file.
 
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{org-preamble}
 \usepackage{geometry}
+\usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{color}
 \definecolor{webgreen}{rgb}{0,.5,0}
@@ -103,7 +104,7 @@
  ItalicFont=texgyrepagella-italic.otf,
  BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
 % \setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
-\setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro-R_1.3.otf}
+\setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro}
 
 \newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
 
@@ -203,15 +204,12 @@ of Education)}
 
 \section*{Publications}
 
-%% Books
 \subsection*{Books}
 
 \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item Vegas, Emiliana, \textbf{Rony Rodriguez-Ramirez}, and Álvaro Hofflinger, "From
-Closure to Recovery: Tracing the Educational Impact of COVID-19 in Chile," (pp.
-17-36) in Harry Patrinos and Nuno Crato, eds., \textit{Learning Post Corona: What It Will Take to
-Finally Improve National Education Systems?}, Springer: Washington, D.C.
-Forthcoming. 
+\item Vegas, Emiliana, \textbf{Rony Rodriguez-Ramirez}, and Álvaro Hofflinger, "\href{https://link.springer.com/book/10.1007/978-3-031-69284-0}{From
+Closure to Recovery: Tracing the Educational Impact of COVID-19 in Chile}," (pp.
+17-36) in Harry Patrinos and Nuno Crato, eds., \textit{Improving National Education Systems After COVID-19}, Springer: Washington, D.C., 2024.
 \item Sánchez, Mario, Douglas Castro, and \textbf{Rony Rodriguez-Ramirez},
 "\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship
 and violence: Deciphering their multiple expressions in Nicaragua}," Managua:
@@ -256,7 +254,7 @@ Dinarte-Diaz, James Gresham, Renata Lemos, and Harry Patrinos.
 \item ``The Role of Selective Public Universities in Shaping Long-Term
 Outcome,'' with Jostin Kitmang. 
 \item ``Shared decision-making: Does quality of care affect contraceptive
-use?,'' with Berk Özler, Katy Bergstrom, and Luca Parisotto.
+use?,'' with Berk Özler and Luca Parisotto.
   \item ``Abortion Ban and Socioeconomic Outcomes: Evidence from Nicaragua.''
 \end{enumerate}
 
@@ -323,10 +321,10 @@ Washington, D.C., 2022.
 \subsection*{Teaching Experience}
 \begin{itemize}
   \item Harvard University
-  \hfill 2024--Present \\
-{\small \emph{Teaching Feloow}.
+  \hfill 2024 \\
+{\small \emph{Teaching Fellow}.
 \texttt{\href{https://github.com/harvard-api209/summer-assignments}{API-201 Math
-Camp (Summer).}}}
+Camp (Summer)}} Fall 2024; \texttt{\href{https://rrmaximiliano.github.io/epa_workshops/}{EPA 101--Education Policy Analysis}}, Fall 2024}
   \item The World Bank \hfill 2021--2023 \\  {\small \emph{Instructor}.} \texttt{\href{https://github.com/worldbank/dime-r-training}{R for Stata Users}, \href{https://github.com/dime-worldbank/rrf-course}{\texttt{Reproducible Research Fundamentals}}}
 
   \item Lambda Institute, Perú \hfill 2020--2022 \\ {\small \emph{Instructor}.} \texttt{\href{https://github.com/lambda-stata/course-materials}{Advanced Stata for Economists}}; \href{https://github.com/lambda-stata/econometria-avanzada}{\texttt{Advanced Methods in Econometrics: Impact Evaluation}}
@@ -354,22 +352,34 @@ Camp (Summer).}}}
 
 \section*{Seminars \textit{\&} Conference Presentations}
 
-\begin{itemize}
-  \item 2024. NEUDC; Economics of Education Seminar, Harvard University.
-  \item 2023. Stata Conference. 
-  \item 2021. The World Bank DIME--KDI School joint conference on
-  Impact Evaluation in Sustainable and Inclusive Development. 
-  \item 2019. Allied Social Science Association (ASSA) meetings;
-  Universidad Centroamericana. 
-  \item 2018. 3ie International Initiative for Impact Evaluation--KDI
-  School joint conference on Impact Evaluation; KAEA-KEA joint International
-  Conference, Sungkyunkwan University; Korea and The World Economy, Jeju
-  National; Asian Meeting of the Econometric Society, Sogang University. 
-  \item 2017. 20th Anniversary of KDI School (poster session); The
-  Ronald Coase Workshop, Xiamen University. 
-  \item 2016. Central American Congress of Sociology. 
-  \item 2015. VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
-\end{itemize}
+% \begin{itemize}
+%   \item NEUDC, Northeastern University; Economics of Education Seminar, Harvard University \hfill 2024
+%   \item Stata Conference \hfill 2023 
+%   \item The World Bank DIME--KDI School joint conference on
+%   Impact Evaluation in Sustainable and Inclusive Development \hfill 2021
+%   \item 2019. Allied Social Science Association (ASSA) meetings;
+%   Universidad Centroamericana. 
+%   \item 2018. 3ie International Initiative for Impact Evaluation--KDI
+%   School joint conference on Impact Evaluation; KAEA-KEA joint International
+%   Conference, Sungkyunkwan University; Korea and The World Economy, Jeju
+%   National; Asian Meeting of the Econometric Society, Sogang University. 
+%   \item 2017. 20th Anniversary of KDI School (poster session); The
+%   Ronald Coase Workshop, Xiamen University. 
+%   \item 2016. Central American Congress of Sociology. 
+%   \item 2015. VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
+% \end{itemize}
+
+\begin{tabularx}{\textwidth}{@{}X@{\hspace{1em}}r@{}}
+  NEUDC, Northeastern University; Economics of Education Seminar, Harvard University & \hfill 2024 \\ 
+  Stata Conference & \hfill 2023 \\ 
+  The World Bank DIME--KDI School joint conference on Impact Evaluation in Sustainable and Inclusive Development & \hfill 2021 \\ 
+  Allied Social Science Association (ASSA) meetings; Universidad Centroamericana & \hfill 2019 \\ 
+  3ie International Initiative for Impact Evaluation--KDI School joint conference on Impact Evaluation; KAEA-KEA joint International Conference, Sungkyunkwan University; Korea and The World Economy, Jeju National; Asian Meeting of the Econometric Society, Sogang University & \hfill 2018 \\ 
+  20th Anniversary of KDI School (poster session); The Ronald Coase Workshop, Xiamen University & \hfill 2017 \\ 
+  Central American Congress of Sociology & \hfill 2016 \\ 
+  VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana & \hfill 2015 \\ 
+  Central American Congress of Sociology; Interdisciplinary Research Congress & \hfill 2014 \\ 
+  \end{tabularx}
 
 %% -------------------------------------------------------------------------------------------------
 %% HONORS and AWARDS
@@ -377,12 +387,14 @@ Camp (Summer).}}}
 
 \section*{Honors \textit{\&} Awards}
 \begin{itemize}
+\item Harvard University, Graduate School of Education \hfill 2024 \\ {\small Doctoral Research Grant (\$3,000); Professional Development Grant (\$500)}
+\item Harvard University, Kennedy School \hfill 2024 \\ {\small Stone Research Grant (\$5,000) Co-PI with Jostin Kitmang}
 \item Harvard University \hfill 2023 \\ {\small Presidential Scholar}
-\item KDI School of Public Policy and Management. \hfill 2016--2018 \\ {\small Dean's list with distinction; Academic Excellence Award; Outstanding Thesis Award; Student Community Service Award.}
+\item KDI School of Public Policy and Management. \hfill 2016--2018 \\ {\small Dean's list with distinction; Academic Excellence Award; Outstanding Thesis Award; Student Community Service Award}
 \item Korean Government Scholarship Program (KGSP), Government of Korea \hfill 2015-2018 \\ {\small Scholarship to pursue Master's studies. First Nicaraguan to be granted the scholarship.}
-\item Universidad Centroamericana. \hfill 2015 \\ {\small  Best Student Performance Award. Awarded by the Applied Economics Department for the highest GPA.}
-\item Universidad Centroamericana \hfill 2014 \\ {\small Young Researchers $1^{\textrm{st}}$ place. Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández.}
-\item Universidad Centroamericana \hfill 2013 \\ {\small Young Researchers $3^{\textrm{rd}}$ place. Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández. }
+\item Universidad Centroamericana. \hfill 2015 \\ {\small  Best Student Performance Award. Awarded by the Applied Economics Department for the highest GPA}
+\item Universidad Centroamericana \hfill 2014 \\ {\small Young Researchers $1^{\textrm{st}}$ place. Research: ``Gender wage gap in Nicaragua'' with Sebastián Hernández}
+\item Universidad Centroamericana \hfill 2013 \\ {\small Young Researchers $3^{\textrm{rd}}$ place. Research: ``Determinants of access to credit in the urban sector'' with Sebastián Hernández}
 \end{itemize}
 
 
@@ -392,12 +404,12 @@ Camp (Summer).}}}
 \section*{Software Development}
 
 \begin{itemize}
-  \item \textbf{Replication Packages}.
+  \item \textbf{Replication Packages}
   \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
     \item with Mauricio Romero and Justin Sandefur. ``Beyond Short-term Learning Gains: The Impact of Outsourcing Schools in Liberia after Three Years.'' Published at the \textit{Economic Journal}. DOI:\href{https://doi.org/10.5281/zenodo.5579799}{10.5281/zenodo.5579799}
   \end{enumerate}
-  \item \textbf{R Packages}. \newline \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. Tidy datasets related to the elections in Nicaragua from 1990 to 2020. \newline \texttt{\href{https://github.com/RRMaximiliano/constitucionesNic}{constitucionesNic}}. Tidy datasets related to the political constitutions of Nicaragua for text mining. \newline \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}. Shiny app with tidy datasets of the COVID-19 pandemic in Nicaragua.
-  \item \textbf{Stata Packages}. \newline
+  \item \textbf{R Packages} \newline \texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}. Tidy datasets related to the elections in Nicaragua from 1990 to 2020. \newline \texttt{\href{https://github.com/RRMaximiliano/constitucionesNic}{constitucionesNic}}. Tidy datasets related to the political constitutions of Nicaragua for text mining. \newline \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}. Shiny app with tidy datasets of the COVID-19 pandemic in Nicaragua.
+  \item \textbf{Stata Packages} \newline
   \texttt{\href{https://github.com/RRMaximiliano/welfarefactor}{welfarefactor}}.
   A new distribution sensitive index for measuring welfare, poverty, and
   inequality.
@@ -434,18 +446,40 @@ Camp (Summer).}}}
 %% LANGUAGE ANS SOFTWARE RESOURCES
 %% -------------------------------------------------------------------------------------------------
 
+% \section*{Skills}
+% \begin{itemize}
+% \item \textbf{Software} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK
+% (SurveyCTO, KoboToolbox) \\
+% Intermediate: Python \\
+% Beginner: SQL, ArcGis, C, Java
+% \item \textbf{Language} \newline Spanish (native) \\ English (fluent) \\ French
+% (C1) \\ Korean (TOPIK 4) \\ Nicaraguan Sign Language (LSN, Intermediate) \\ Latin
+% (Beginner)
+% \end{itemize}
+% \bigskip
+
 \section*{Skills}
 \begin{itemize}
-\item \textbf{Software.} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK
-(SurveyCTO, KoboToolbox) \\
-Intermediate: Python \\
-Beginner: SQL, ArcGis, C, Java
-\item \textbf{Language.} \newline Spanish (native) \\ English (fluent) \\ French
-(C1) \\ Korean (TOPIK 4) \\ Nicaraguan Sign Language (LSN, Intermediate) \\ Latin
-(Beginner)
+    \item \textbf{Data Analysis and Statistical Tools} \\ 
+    Advanced: Stata, R \\ 
+    Intermediate: Python \\ 
+    Beginner: SQL
+    \item \textbf{Survey and Data Collection Tools} \\ 
+    Advanced: ODK (SurveyCTO, KoboToolbox)
+    \item \textbf{Version Control and Collaboration} \\ 
+    Advanced: Git(GitHub)
+    \item \textbf{Geospatial and Mapping Tools} \\ 
+    Beginner: ArcGIS
+    \item \textbf{Programming and Markup Languages} \\ 
+    Advanced: \LaTeX \\ 
+    Beginner: C, Java
+    \item \textbf{Languages} \\
+    Native: Spanish \\
+    Fluent: English \\
+    Proficient: French (C1), Korean (TOPIK 4)    \\
+    Intermediate: Nicaraguan Sign Language (LSN) \\
+    Beginner: Latin
 \end{itemize}
-\bigskip
-
 
 % \section*{References}
 % \begin{itemize}
