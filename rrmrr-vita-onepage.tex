@@ -17,17 +17,27 @@
 % \usepackage{lmodern}
 % \usepackage[osf]{mathpazo}
 
-\hypersetup{
-  colorlinks,
-  urlcolor = darkblue,
-  pdfauthor={Rony Rodrigo Maximiliano Rodriguez Ramirez}
-  pdfkeywords={economics education development health},
-  pdftitle={Curriculum Vitae},
-  pdfsubject={Curriculum Vitae},
-  pdfpagemode=UseNone
-}
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webpurple}{rgb}{0.7,0,0.7}
+% \usepackage{lmodern}
+% \usepackage[osf]{mathpazo}
 
-\geometry{textheight=9.25in, textwidth=7.25in}
+\hypersetup{
+  breaklinks = true,  
+  colorlinks=true, 
+  anchorcolor= webbrown, 
+  citecolor= webbrown,
+  filecolor= webbrown, 
+  linkcolor= webbrown, 
+  menucolor= webbrown,
+  urlcolor= webbrown, 
+  citebordercolor= 1 0 0, 
+  menubordercolor=1 0 0, 
+  urlbordercolor=1 0 0, 
+  runbordercolor=1 0 0 }
+\hypersetup{pdfauthor=Rony Rodriguez-Ramirez}
+\geometry{textheight=9.25in, textwidth=7.25in,bottom=.75in,top=.75in}
 
 % Customize section headings
 \usepackage{sectsty}
@@ -36,8 +46,8 @@
 \subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
 
 \usepackage{titlesec}
-\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
-\titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\titlespacing\section{0pt}{5pt plus 2pt minus 1pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 % Don't indent paragraphs.
@@ -92,7 +102,7 @@
  ItalicFont=texgyrepagella-italic.otf,
  BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
 % \setsansfont[Mapping=tex-text,Colour=darkblue]{Yanone Kaffeesatz-Medium}
-\setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro-R_1.3.otf}
+\setmonofont[Mapping=tex-text,Scale=0.85]{Essential PragmataPro}
 
 \newfontface\scheader[SmallCapsFont={texgyrepagella-regular.otf},SmallCapsFeatures={Letters=SmallCaps}]{texgyrepagella-regular.otf}
 
@@ -112,7 +122,7 @@
 \fancypagestyle{empty}{%
   \fancyhf{}% Clear header/footer
   \fancyfoot[C]{\scshape \thepage}
-  \fancyfoot[R]{{\normalsize \texttt{Updated with commit \href{https://github.com/RRMaximiliano/rrmrr-vita/tree/\commithash}{\commitcode}\ on \today}}}
+  \fancyfoot[R]{{\normalsize \texttt{Last Updated: \today}}}
 }
 
 %%%------------------------------------------------------------------------  
@@ -129,10 +139,10 @@
 \begin{document}
 \thispagestyle{empty}
 
-\vspace*{-7em}
+\vspace*{-6em}
 
 \begin{center}
-  {\Large\bf RONY RODRIGO MAXIMILIANO RODRÍGUEZ--RAMÍREZ} \\
+  {\large\bf RONY RODRIGO MAXIMILIANO RODRÍGUEZ--RAMÍREZ} \\
   6 Appian Way, Cambridge, MA 02138  \\
   %\texttt{\href{https://twitter.com/RRMaximiliano}{\mytwitter}}\, \faTwitter \, 
   \texttt{\href{https://rrmaximiliano.github.io}{\myweb}}\, \faLink \, \texttt{\href{https://github.com/RRMaximiliano}{\mygithub}}\, \faGithub \, \texttt{\href{mailto:\myemail}{\myemail}}\, \faEnvelope
@@ -149,29 +159,29 @@
 \section*{Education}
 
 \begin{itemize}
-%% Graduate studies
-\item Ph.D. Harvard University \hfill 2027 (expected) \\
-{\small \textit{Education Policy \& Program Evaluation} (Field Course: Economics
-of Education)}
-  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
-    \item {\small \textbf{Awards}: Harvard University Presidential Fellow }
-  \end{enumerate}
-
-%% Graduate studies
-\item M.Sc. KDI School of Public Policy and Management, Republic of Korea \hfill 2018 \\
-{\small \textit{Development Policy} (Summa Cum Laude)}
+  %% Graduate studies
+  \item Ph.D. Harvard University \hfill 2027 (expected) \\
+  {\small \textit{Education Policy \& Program Evaluation} (Field Course: Economics
+  of Education)}
+    \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+      \item {\small \textbf{Awards}: Harvard University Presidential Fellow }
+    \end{enumerate}
   
-  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
-    \item {\small \textbf{Thesis:} Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua. \\ 
-    \textbf{Awards:} Outstanding Thesis Award, Academic Excellence Award \\ 
-    \textbf{Concentrations:} Sustainable Development \textit{\&} Global Governance and Political Economy }
-  \end{enumerate}
-%% Undergraduate  
-\item B.Sc. Universidad Centroamericana, Nicaragua \hfill 2015 \\
-{\small \textit{Applied Economics} (Magna Cum Laude, Best Student Overall Performance, Top 1\%)}
-  
-  \begin{enumerate}[leftmargin=10pt, label={}, nosep]
-    \item {\small \textbf{Concentrations:} Economic \textit{\&} Territorial Development}
+  %% Graduate studies
+  \item M.Sc. KDI School of Public Policy and Management, Republic of Korea \hfill 2018 \\
+  {\small \textit{Development Policy} (Summa Cum Laude)}
+    
+    \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+      \item {\small \textbf{Thesis:} Does the Small Business Program Benefit Self-Employed Workers? Evidence from Nicaragua. \\ 
+      \textbf{Awards:} Outstanding Thesis Award, Academic Excellence Award \\ 
+      \textbf{Concentrations:} Sustainable Development \textit{\&} Global Governance and Political Economy }
+    \end{enumerate}
+  %% Undergraduate  
+  \item B.Sc. Universidad Centroamericana, Nicaragua \hfill 2015 \\
+  {\small \textit{Applied Economics} (Summa Cum Laude, Best Student Overall Performance, Top 1\%)}
+    
+    \begin{enumerate}[leftmargin=10pt, label={}, nosep]
+      \item {\small \textbf{Concentrations:} Economic \textit{\&} Territorial Development}
   \end{enumerate}
 \end{itemize}
 
@@ -192,43 +202,44 @@ of Education)}
 %% RESEARCH WORK
 %% -------------------------------------------------------------------------------------------------
 
-\section*{Research Work}
+\section*{Publications}
 
-\subsection*{Working Papers}
+\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
+  \item Vegas, Emiliana, \textbf{Rony Rodriguez-Ramirez}, and Álvaro Hofflinger, "\href{https://link.springer.com/book/10.1007/978-3-031-69284-0}{From
+  Closure to Recovery: Tracing the Educational Impact of COVID-19 in Chile}," (pp.
+  17-36) in Harry Patrinos and Nuno Crato, eds., \textit{Improving National Education Systems After COVID-19}, Springer: Washington, D.C., 2024.
+  \item Sánchez, Mario, Douglas Castro, and \textbf{Rony Rodriguez-Ramirez},
+  "\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship
+  and violence: Deciphering their multiple expressions in Nicaragua}," Managua:
+  Centro de Análisis Socio-Cultural, 2015. 
+  \item Kim, Booyuel, \textbf{Rony Rodriguez-Ramirez}, and Hee-Seung Yang, ``\href{https://www.tandfonline.com/doi/full/10.1080/19439342.2023.2300138}{Does the small business
+  program benefit self-employed workers? Evidence from Nicaragua.},''
+  \textit{Journal of Development Effectiveness}, January 2024, 1--20. 
+  \item Osorio, Hloreley and \textbf{Rony Rodriguez-Ramirez},
+  ``\href{https://revistas.ucr.ac.cr/index.php/anuario/article/view/45081/44860}{Criticism
+  and Crisis in Nicaragua: The tension between Democracy and Capitalism},'' \emph{Anuario de Estudios Centroamericanos}, May 2020, \textit{46},1--42.
+  \item Sánchez, Mario, Douglas Castro, \textbf{Rony Rodriguez-Ramirez}, and Jorge
+  Guerra, ``\href{https://amnis.revues.org/2813}{Social movements and collective
+  action in Nicaragua: between identity, autonomy and subordination},'' \emph{Amnis}, September 2016, 15.
+  
+  \item Siero, Carol, Sebastián Hernández, and \textbf{Rony Rodriguez-Ramirez},
+  ``\href{http://www.uca.edu.ni/2/images/Revista-Encuentro/Revistas/e102/art-5.pdf}{Has
+  the international cooperation been important for development and economic
+  growth? Panel Evidence on Nicaragua and Central America},''
+  \emph{Encuentro}, December 2015, (102), 52--74.
+  
+\end{enumerate}
+
+\section*{Working Papers}
 
 %% Working Papers
 \begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item with Booyuel Kim \textit{\&} Hee-Seung Yang. ``In utero exposure to civil conflict: Nicaraguan war and its long-term effects on socio-economic outcomes.''
-\item with Lelys Dinarte-Diaz, James Gresham, Renata Lemos, \textit{\&} Harry
-Patrinos. ``Online Tutoring in Pandemic and Conflict-affected Ukraine''
+\item ``In utero exposure to civil conflict: Nicaraguan war and its long-term
+effects on socio-economic outcomes,'' with Booyuel Kim and Hee-Seung Yang.
+\item ``Investing in Human Capital During Wartime: Experimental Evidence from Ukraine,'' with Lelys
+Dinarte-Diaz, James Gresham, Renata Lemos, and Harry Patrinos. 
+\item ``Supporting Mental Health Through the Promotion of Psychosocial Support in Armenian schools,'' with Lelys Dinarte-Diaz, and Renata Lemos.
 \end{enumerate}
-
-%% Books
-\subsection*{Books and Chapters}
-
-\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item In Press. with Emiliana Vegas \textit{\&} Álvaro Hofflinger. ``Chile
-Chapter'' in \textit{Learning Post Corona: What It Will take to Finally Improve
-National Education Systems Where We Are and How Can We Move Forward After PISA
-2022}, (Eds.) Harry Patrinos \textit{\&} Nuno Crato. Washington D.C.
-\item 2016. with Mario Sánchez \textit{\&} Douglas Castro. ``\emph{\href{http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf}{Citizenship and violence: Deciphering their multiple expressions in Nicaragua}},'' (in Spanish). Managua: Centro de Análisis Socio-Cultural.
-\end{enumerate}
-
-%% Non econ journal articles
-\subsection*{Journal Articles}
-
-\begin{enumerate}[leftmargin=10pt, label={}, itemindent=-10pt, nosep]
-\item 2024. with Booyuel Kim \textit{\&} Hee-Seung Yang. ``\href{https://www.tandfonline.com/doi/full/10.1080/19439342.2023.2300138}{Does the small business
-  program benefit self-employed workers? Evidence from Nicaragua.}''
-  \textit{Journal of Development Effectiveness}. DOI: 10.1080/19439342.2023.2300138
-
-\item 2020. with Hloreley Osorio. ``\href{https://revistas.ucr.ac.cr/index.php/anuario/article/view/45081/44860}{Criticism and Crisis in Nicaragua: The tension between Democracy and Capitalism},'' (in Spanish). \emph{Anuario de Estudios Centroamericanos, 46}, 1-42.
-
-\item 2016. with Mario Sánchez, Douglas Castro, \textit{\&} Jorge Guerra. ``\href{https://amnis.revues.org/2813}{Social movements and collective action in Nicaragua: between identity, autonomy and subordination},'' (in Spanish). \emph{Amnis}, (15).
-
-\item 2015. with Carol Siero \textit{\&} Sebastián Hernández. ``\href{http://www.uca.edu.ni/2/images/Revista-Encuentro/Revistas/e102/art-5.pdf}{Has the international cooperation been important for development and economic growth? Panel Evidence on Nicaragua and Central America},'' (in Spanish). \emph{Encuentro}, (102), 52--74.
-\end{enumerate}
-
 
 %% Work in Progress
 % \subsection*{Work in Progress}
@@ -249,8 +260,14 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 %% PROFESSIONAL EXPERIENCE: RESEARCH PLUS TEACHING
 %% -------------------------------------------------------------------------------------------------
 
-% \section*{Professional Experience}
+\section*{Professional Experience}
 
+\begin{itemize}
+\item \textbf{Research Analysist, The World Bank} \hfill 2020-Present \newline
+{\small Worked with the Development Research Group (Poverty and Inequality) and DIME on experimental and impact evaluation projects, including: Adaptive interventions for contraceptive uptake in Cameroon, Tech-enabled tutoring for adolescent learning in Ukraine, Mental health and psychosocial support in Armenian schools, Land rights and irrigation productivity in Rwanda.}
+\item \textbf{Research Assistant, ITAM - Innovations for Poverty Action and University of Oxford} \hfill 2019-2020 \newline
+{\small Assisted Professors Mauricio Romero and Nathaniel Lane on impact evaluations and governance research, including: Outsourcing schools in Liberia and Civil society and multinational governance across countries.}
+\end{itemize}
 % \subsection*{Research Experience}
 
 % \begin{itemize}
@@ -302,7 +319,8 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 %% HONORS and AWARDS
 %% -------------------------------------------------------------------------------------------------
 
-% \section*{Seminars \textit{\&} Conference Presentations}
+\section*{Seminars \textit{\&} Conference Presentations}
+	2024.	NEUDC, Northeastern University; Economics of Education Seminar, Harvard University. \newline 2023. Stata Conference. \newline 2021. The World Bank DIME--KDI School. \newline 2019. Allied Social Science Association (ASSA--AER) meetings.
 
 % \begin{itemize}
 %   \item \textbf{2023.} Stata Conference. \textbf{2021.} The World Bank DIME--KDI School joint conference on Impact Evaluation in Sustainable and Inclusive Development. \textbf{2019.} Allied Social Science Association (ASSA) meetings; Universidad Centroamericana. \textbf{2018.} 3ie International Initiative for Impact Evaluation--KDI School joint conference on Impact Evaluation; KAEA-KEA joint International Conference, Sungkyunkwan University; Korea and The World Economy, Jeju National; Asian Meeting of the Econometric Society, Sogang University. \textbf{2017.} 20th Anniversary of KDI School (poster session); The Ronald Coase Workshop, Xiamen University. \textbf{2016.} Central American Congress of Sociology. \textbf{2015.} VI Ethics Conference, Universidad Centroamericana; Interdisciplinary Research Congress, Universidad Centroamericana. 2014. Central American Congress of Sociology; Interdisciplinary Research Congress.
@@ -348,10 +366,8 @@ National Education Systems Where We Are and How Can We Move Forward After PISA
 
 \section*{Skills}
 \begin{itemize}
-\item \textbf{Software.} \newline Advanced: Stata, R, \LaTeX, Git(Hub), ODK (SurveyCTO) \\
-Intermediate: Python \\
-Beginner: SQL, ArcGis, C, Java.
-\item \textbf{Language.} \newline Spanish (native), English (fluent), French
+\item \textbf{Software.} Stata, R, \LaTeX, Git(Hub), ODK (SurveyCTO), Python.
+\item \textbf{Language.} Spanish (native), English (fluent), French
 (C1), Korean (TOPIK 4), Nicaraguan Sign Language (LSN, Intermediate), Latin
 (Beginner).
 \end{itemize}
