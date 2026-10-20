@@ -1,0 +1,21 @@
+#!/bin/sh
+# After a commit that changes the CV source, build the PDF and commit it
+# (`make release`), so the published PDF always matches the latest source.
+cd "$(git rev-parse --show-toplevel)" || exit 0
+PATH="/Library/TeX/texbin:$PATH"  # GUI Git clients may not load your shell PATH
+
+# Not during a rebase, merge, or cherry-pick: rebuild once it's done.
+for state in rebase-merge rebase-apply MERGE_HEAD CHERRY_PICK_HEAD; do
+  [ -e "$(git rev-parse --git-path $state)" ] && exit 0
+done
+
+# Only when this commit touched the source (the build commit itself doesn't).
+git diff-tree --root --no-commit-id --name-only -r HEAD -- '*.tex' '*.sty' logo \
+  | grep -q . || exit 0
+
+echo "CV source changed: building and committing the PDF..."
+if make -s release >/tmp/rrmrr-vita-release.log 2>&1; then
+  git log -1 --format='Committed: %h %s'
+else
+  echo "PDF build failed; see /tmp/rrmrr-vita-release.log, then run: make release"
+fi
