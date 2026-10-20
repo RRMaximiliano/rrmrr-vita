@@ -14,26 +14,30 @@ macros, fonts, and publishing setup.
 ```sh
 make hooks    # once per clone: turn on the git hooks in hooks/
 # edit cv-content.tex
-make          # optional: build the PDFs to check them
+make          # optional: build the PDF to check it
 make sync     # optional: compare the papers with the website
-git commit    # the post-commit hook builds the PDFs and commits them
-git push      # GitHub Pages publishes the PDFs; the website picks them up
+git commit    # the post-commit hook builds the PDF and commits it
+git push      # GitHub Pages publishes the PDF; the website picks it up
 ```
 
 There is no separate build step before publishing. After any commit that
-changes the CV source, the hook builds the PDFs and adds a second commit,
-"Build CV from `abc1234`", with the PDFs and `rrmrr-vita.json`.
+changes the CV source, the hook builds the PDF and adds a second commit,
+"Build CV from `abc1234`", with the PDF and `rrmrr-vita.json`.
 
-## One source, three versions
+## The full CV and shorter versions
 
 All content lives in `cv-content.tex`, once. Each version is a short file
 that picks sections and their order:
 
-| File | Pages | What it is |
-|---|---|---|
-| `rrmrr-vita.tex` | 5 | The full CV, in the order the department recommends. |
-| `rrmrr-vita-short.tex` | 3 | The short CV. |
-| `rrmrr-vita-lemann.tex` | 3 | The short CV with grants and research first, for the Lemann proposal. |
+| File | Pages | Build | What it is |
+|---|---|---|---|
+| `rrmrr-vita.tex` | 5 | `make` (and the hook) | The full CV, in the order the department recommends. The only PDF that is committed and published. |
+| `rrmrr-vita-short.tex` | 3 | `make short` | The short CV. |
+| `rrmrr-vita-lemann.tex` | 3 | `make lemann` | The short CV with grants and research first, for the Lemann proposal. |
+
+The short versions are built only when needed, from the same content, so
+they are never out of date. Their PDFs stay on your computer: git ignores
+them, and they are not published.
 
 The short versions call `\cvshort`, which leaves out every entry wrapped in
 `\fullonly{...}` (older talks, minor awards and teaching), runs courses and
@@ -42,8 +46,9 @@ something from the short CV, wrap it in `\fullonly`; to add a new version,
 copy `rrmrr-vita-short.tex` and change its `\cvshow` list.
 
 `\cvshow[Label]{key}` prints a section; `\cvshow{grants,awards}` prints two
-as one. These replace the old `2-page` and `dev/lemann-three-page-cv`
-branches, which were copies of the content that fell out of date.
+as one. These files do the job of the old `2-page` and
+`dev/lemann-three-page-cv` branches, without a second copy of the content
+that can fall out of date.
 
 ## Requirements
 
@@ -110,9 +115,10 @@ date.
 
 | Target | What it does |
 |---|---|
-| `make` | Builds all three PDFs (`latexmk -xelatex`). |
-| `make release` | Builds from committed source and commits the PDFs and JSON. Refuses if the source has uncommitted edits. |
-| `make check` | Fails if the committed PDFs are older than the source. |
+| `make` | Builds the full CV (`latexmk -xelatex`). |
+| `make short`, `make lemann` | Builds a short version (not committed). |
+| `make release` | Builds the full CV from committed source and commits the PDF and JSON. Refuses if the source has uncommitted edits. |
+| `make check` | Fails if the committed PDF is older than the source. |
 | `make sync` | Lists papers that differ between the CV and the website's `research/papers.yml` (title or section). Papers that are on the CV on purpose are listed in `tools/check-site.py`. |
 | `make links` | Checks every link in the CV. Fails on links that are gone; lists sites that refuse scripts or time out, to open by hand. |
 | `make hooks` | Points git at `hooks/` (`core.hooksPath`). |
@@ -127,9 +133,9 @@ date.
 | `rrmrr-cv.sty` | Packages, fonts, layout macros, header, footer, and the version stamp. |
 | `vc.sh` | Writes `vc.tex` and `rrmrr-vita.json` from git. |
 | `.latexmkrc` | Uses XeLaTeX and runs `vc.sh` before each build. |
-| `hooks/` | `post-commit` (build and commit the PDFs) and `pre-push` (check). |
+| `hooks/` | `post-commit` (build and commit the PDF) and `pre-push` (check). |
 | `tools/` | The scripts behind `make sync` and `make links`. |
-| `*.pdf`, `rrmrr-vita.json` | Build outputs, committed so GitHub Pages can serve them. |
+| `rrmrr-vita.pdf`, `rrmrr-vita.json` | Build outputs, committed so GitHub Pages can serve them. |
 | `logo/` | Harvard logo for the header. |
 
 ## Layout macros
@@ -185,4 +191,4 @@ What differs:
 | Building and publishing | Manual | Git hooks build and commit the PDF; `git push` publishes it |
 | Website | Links to the PDF | Also reads `rrmrr-vita.json` to show the same commit and date |
 | Layout | `memoir` with Healy's styles | `article` with the macros above |
-| Content | In the vita file | In `cv-content.tex`, shared by three versions |
+| Content | In the vita file | In `cv-content.tex`, shared by the full CV and the short versions |

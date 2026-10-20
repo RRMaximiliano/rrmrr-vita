@@ -1,27 +1,35 @@
 CV := rrmrr-vita
-VARIANTS := $(CV) $(CV)-short $(CV)-lemann
+# Short versions: built on request (make short, make lemann), not committed.
+VARIANTS := $(CV)-short $(CV)-lemann
 SRC := '*.tex' '*.sty' logo
 SITE ?= ../rrmaximiliano.github.io
 LATEXMK := latexmk -xelatex -interaction=nonstopmode
 
-.PHONY: pdf release check links sync hooks clean
+.PHONY: pdf short lemann release check links sync hooks clean
 
-# Build every version. With uncommitted edits, the footer shows the last
-# commit and today's date; use `make release` for PDFs that match a commit.
+# Build the full CV. With uncommitted edits, the footer shows the last
+# commit and today's date; use `make release` for a PDF that matches a commit.
 pdf:
-	$(LATEXMK) $(VARIANTS:=.tex)
+	$(LATEXMK) $(CV).tex
 
-# Build from committed source and commit the PDFs, so the commit in the
-# footer is exactly the source of the published PDFs. The post-commit hook
-# runs this for you after every commit that changes the CV source.
+# Build a short version when you need it. Its PDF stays local (.gitignore).
+short:
+	$(LATEXMK) $(CV)-short.tex
+
+lemann:
+	$(LATEXMK) $(CV)-lemann.tex
+
+# Build the full CV from committed source and commit the PDF, so the commit
+# in the footer is exactly the source of the published PDF. The post-commit
+# hook runs this for you after every commit that changes the CV source.
 release:
 	@git diff --quiet HEAD -- $(SRC) || { echo "Commit the CV source first."; exit 1; }
-	$(LATEXMK) $(VARIANTS:=.tex)
-	git add $(VARIANTS:=.pdf) $(CV).json
-	@git diff --cached --quiet -- $(VARIANTS:=.pdf) $(CV).json \
+	$(LATEXMK) $(CV).tex
+	git add $(CV).pdf $(CV).json
+	@git diff --cached --quiet -- $(CV).pdf $(CV).json \
 	  || git commit -m "Build CV from $$(git log -1 --format=%h -- $(SRC))"
 
-# Fails if the committed PDFs weren't built from the latest source commit.
+# Fails if the committed PDF wasn't built from the latest source commit.
 # The pre-push hook runs this.
 check:
 	@src=$$(git log -1 --format=%H -- $(SRC)); \
@@ -41,5 +49,5 @@ hooks:
 	git config core.hooksPath hooks
 
 clean:
-	latexmk -c $(VARIANTS:=.tex)
+	latexmk -c $(CV).tex $(VARIANTS:=.tex)
 	rm -f vc.tex
