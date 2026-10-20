@@ -1,0 +1,265 @@
+%% rrmrr-cv.sty: layout, fonts, and version stamp for the CV.
+%% The content is in cv-content.tex. Each rrmrr-vita*.tex file loads this
+%% style and the content, then lists the sections it shows, in order.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rrmrr-cv}
+
+%%%------------------------------------------------------------------------
+%%% Packages
+%%%------------------------------------------------------------------------
+\RequirePackage{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{realscripts}       % \textsuperscript from the font (1st, 3rd)
+\RequirePackage{fontawesome}        % \faGithub
+\RequirePackage{xcolor}
+\RequirePackage[export]{adjustbox}  % valign=t for the logo
+\RequirePackage{etoolbox}           % \ifblank, \newtoggle, \csgdef
+\RequirePackage[en-USA]{datetime2}  % \DTMdate, used in vc.tex
+\RequirePackage{fancyhdr}
+\RequirePackage{hyperref}
+
+%%%------------------------------------------------------------------------
+%%% Page, fonts, and colors
+%%%------------------------------------------------------------------------
+\geometry{textheight=9.25in, textwidth=7.25in}
+\setlength\parindent{0pt}
+\setlength\parskip{0.5em}
+\setlength\emergencystretch{1em} % wrap long lines instead of overflowing
+\clubpenalty=10000  % never leave one line of an entry
+\widowpenalty=10000 % alone at the bottom or top of a page
+
+% Minion Pro and Lexia Mono come from Adobe Fonts (see README).
+\setmainfont{Minion Pro}[
+  Numbers = {Lining, Proportional},
+  Kerning = On,
+  Ligatures = TeX
+]
+\setmonofont{Lexia Mono VF}[Scale = 0.75, Ligatures = TeX]
+
+\definecolor{webbrown}{rgb}{.6,0,0}             % links
+\definecolor{harvardcrimson}{RGB}{165,28,48}    % phone number
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = webbrown,
+  urlcolor   = webbrown,
+  breaklinks = true,
+}
+
+\hyphenation{Cen-tro-a-me-ri-ca-na Ni-ca-ra-gua Sung-kyun-kwan ArcGIS}
+
+%%%------------------------------------------------------------------------
+%%% Version stamp
+%%%------------------------------------------------------------------------
+%% vc.tex is written by vc.sh, which latexmk runs before every build (see
+%% .latexmkrc). It records the last commit that changed the CV source, so the
+%% footer points to the exact source of the PDF.
+\providecommand{\cvcommit}{}
+\providecommand{\cvcommitfull}{}
+\providecommand{\cvdate}{\today}
+\InputIfFileExists{vc.tex}{}{}
+
+\newcommand{\cvrepo}{https://github.com/RRMaximiliano/rrmrr-vita}
+\newcommand{\cvversion}{%
+  \ifdefempty{\cvcommit}
+    {Updated on \cvdate}
+    {Updated with commit \href{\cvrepo/tree/\cvcommitfull}{\cvcommit}\ on \cvdate}}
+
+% Page numbers at the bottom; page 1 shows the version stamp instead.
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{commit}{%
+  \fancyhf{}%
+  \fancyfoot[R]{{\normalsize \texttt{\cvversion}}}}
+
+%%%------------------------------------------------------------------------
+%%% Variants
+%%%------------------------------------------------------------------------
+%% \cvshort switches to the short CV: entries wrapped in \fullonly{...} are
+%% left out, \cvsubitem and \cvgrant run on, and entries sit closer.
+\newtoggle{cvshort}
+\newcommand{\cvshort}{\toggletrue{cvshort}\setlength\cvgap{3pt}}
+\newcommand{\fullonly}[1]{\iftoggle{cvshort}{}{#1}}
+
+%%%------------------------------------------------------------------------
+%%% Spacing
+%%%------------------------------------------------------------------------
+\newlength\cvgap      \setlength\cvgap{4pt}     % after each entry and section
+\newlength\cvsubgap   \setlength\cvsubgap{2pt}  % title to details; between sub-entries
+\newlength\cvheadgap  \setlength\cvheadgap{3pt} % below a group heading
+
+%%%------------------------------------------------------------------------
+%%% Sections
+%%%------------------------------------------------------------------------
+
+% \cvdefine{key}{Label}{entries} stores a section; nothing is printed.
+% Content must not contain a bare #; write \# instead (also in URLs).
+\newcommand{\cvdefine}[3]{%
+  \csgdef{cv@label@#1}{#2}%
+  \csgdef{cv@body@#1}{\ignorespaces#3}}
+
+% \cvshow[Label]{key} prints a stored section. Several keys (grants,awards)
+% print as one section, under the first one's label unless Label is given.
+\newcommand{\cvshow}[2][]{%
+  \cvsection
+    {\ifblank{#1}{\cv@firstlabel#2,\@nil}{#1}}
+    {\forcsvlist{\cv@body}{#2}}}
+\def\cv@firstlabel#1,#2\@nil{\csuse{cv@label@#1}}
+\newcommand{\cv@body}[1]{%
+  \ifcsdef{cv@body@#1}
+    {\csuse{cv@body@#1}}
+    {\PackageError{rrmrr-cv}{Unknown CV section `#1'}
+      {The keys are the first argument of \string\cvdefine\space in cv-content.tex.}}}
+
+% \cvsection{Label}{entries}: label in the left column, entries on the
+% right. Entries may break across pages.
+\newcommand{\cvsection}[2]{%
+  \par\vspace{\cvgap}
+  \begin{list}{}{%
+      \setlength{\leftmargin}{0.26\textwidth}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\topsep}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\itemsep}{0pt}
+      \setlength{\parsep}{0pt}
+    }
+  \item
+    \makebox[0pt][r]{%
+      % \smash hides the label's height, so a long label doesn't push
+      % the first entry down.
+      \smash{%
+        \begin{minipage}[t]{0.24\textwidth}
+          \raggedright\textbf{#1}
+        \end{minipage}%
+      }%
+      \hspace{0.02\textwidth}%
+    }%
+    \ignorespaces
+    #2
+  \end{list}
+}
+
+%%%------------------------------------------------------------------------
+%%% Entries
+%%%------------------------------------------------------------------------
+
+\newif\ifcvfirstsub % set by \cvitem, read by \cvsubitem
+
+% \cvitem[font]{Title}{Details}{Date}
+% Titles are regular weight; bold is reserved for section labels and for
+% my name in author lists. Details and dates are small; details take no
+% final period. Details and date may be empty.
+\newcommand{\cvitem}[4][\textnormal]{%
+  \noindent
+  {#1{#2}}\strut \hfill {\small #4}%
+  \par\nopagebreak % keep the title with its details
+  \ifblank{#3}{%
+    \vspace{\cvgap}%
+  }{%
+    \nointerlineskip
+    \vspace{\cvsubgap}%
+    {%
+      \raggedright % ragged like \cvpub; resets \leftskip, so indent after
+      \addtolength{\leftskip}{1em}%
+      \small
+      \cvfirstsubtrue
+      #3\par % no \noindent: it would leave an empty line before a \cvsubitem
+    }%
+    \vspace{\cvgap}%
+  }%
+}
+
+% \cvsubitem{Title}{Detail}{Date}: a line inside \cvitem's details, e.g. a
+% course with its instructors (italic) below. Detail and date may be empty.
+% In the short CV sub-entries run on as one paragraph:
+% "Title, Detail (Date); Title, Detail (Date)".
+\newcommand{\cvsubitem}[3]{%
+  \iftoggle{cvshort}
+    {\ifcvfirstsub\cvfirstsubfalse\else\unskip; \fi
+     #1\ifblank{#2}{}{, \textit{#2}}\ifblank{#3}{}{ (#3)}}
+    {\par
+     \ifcvfirstsub\cvfirstsubfalse\else\addvspace{\cvsubgap}\fi % gap between, not above
+     \noindent #1\hfill #3\par
+     \ifblank{#2}{}{\nopagebreak\noindent\textit{#2}\par}}%
+}
+
+% \cvgrant{Funder}{Amount}{Project}{Co-PIs}{Year}: Project and Co-PIs may be
+% empty. The full CV puts each on its own line; the short CV joins them.
+\newcommand{\cvgrant}[5]{%
+  \iftoggle{cvshort}
+    {\cvitem{#1}{#2\ifblank{#3}{}{; ``#3''}\ifblank{#4}{}{; Co-PI with #4}}{#5}}
+    {\cvitem{#1}{Amount: #2\ifblank{#3}{}{\\Project: ``#3''}\ifblank{#4}{}{\\Co-PI with #4}}{#5}}%
+}
+
+% \cvpub[URL]{Title}{Authors}{Venue}{Year}: the title goes in quotes and
+% links to URL; authors and venue share one small line below. Any of URL,
+% authors, venue, and year may be empty.
+\newcommand{\cvpub}[5][]{%
+  \noindent
+  \begin{minipage}[t]{0.83\linewidth}
+    \raggedright ``\ifblank{#1}{#2}{\href{#1}{#2}}''\strut
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.16\linewidth}
+    \raggedleft {\small #5}\strut
+  \end{minipage}%
+  \par\nopagebreak\nointerlineskip\vspace{\cvsubgap}%
+  \ifboolexpr{test {\ifblank{#3}} and test {\ifblank{#4}}}{}{%
+    {%
+      \raggedright
+      \addtolength{\leftskip}{1em}% before \small: same indent as \cvitem
+      \small
+      \noindent #3\ifboolexpr{test {\ifblank{#3}} or test {\ifblank{#4}}}{}{. }#4\par
+    }%
+  }%
+  \vspace{\cvgap}%
+}
+
+% \cvitemconf{Text}{Year}: a talk; the year stays top-aligned when the
+% text wraps.
+\newcommand{\cvitemconf}[2]{%
+  \noindent
+  \begin{minipage}[t]{0.87\linewidth}
+    \raggedright \textnormal{#1}\strut
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.13\linewidth}
+    \raggedleft {\small #2}\strut
+  \end{minipage}%
+  \par
+  \nointerlineskip
+  \vspace{\cvgap}%
+}
+
+% \cvsubheading{Name}: a group inside a section, e.g. Journal Articles.
+\newcommand{\cvsubheading}[1]{%
+  \ifvmode\addvspace{\cvgap}\fi % no gap when it opens the section
+  \noindent\textit{#1}\par\nopagebreak\vspace{\cvheadgap}%
+}
+
+%%%------------------------------------------------------------------------
+%%% Header
+%%%------------------------------------------------------------------------
+% Name and contact details on the left, logo on the right. \myname,
+% \myemail, \myphone, and \myweb are set in cv-content.tex.
+\newcommand{\cvheader}{%
+  \thispagestyle{commit}%
+  \begin{minipage}[t]{0.7\textwidth}
+    \vspace{-8pt}
+    {\textsc{\Large \myname}} \\
+    \texttt{\href{mailto:\myemail}{\myemail}} \\
+    \texttt{\textcolor{harvardcrimson}{\myphone}} \\
+    \texttt{\href{https://\myweb}{\myweb}}
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.28\textwidth}
+    \vspace{-8pt}
+    \raggedleft
+    \includegraphics[width=0.9\textwidth, valign=t]{logo/harvard.png}
+  \end{minipage}
+  \vspace{0.2cm}
+  \hrule
+}

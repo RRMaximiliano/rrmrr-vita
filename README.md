@@ -13,22 +13,45 @@ macros, fonts, and publishing setup.
 
 ```sh
 make hooks    # once per clone: turn on the git hooks in hooks/
-# edit rrmrr-vita.tex
-make          # optional: build the PDF to check it
-git commit    # the post-commit hook builds the PDF and commits it
-git push      # GitHub Pages publishes the PDF; the website picks it up
+# edit cv-content.tex
+make          # optional: build the PDFs to check them
+make sync     # optional: compare the papers with the website
+git commit    # the post-commit hook builds the PDFs and commits them
+git push      # GitHub Pages publishes the PDFs; the website picks them up
 ```
 
 There is no separate build step before publishing. After any commit that
-changes the CV source, the hook builds the PDF and adds a second commit,
-"Build CV from `abc1234`", with the PDF and `rrmrr-vita.json`.
+changes the CV source, the hook builds the PDFs and adds a second commit,
+"Build CV from `abc1234`", with the PDFs and `rrmrr-vita.json`.
+
+## One source, three versions
+
+All content lives in `cv-content.tex`, once. Each version is a short file
+that picks sections and their order:
+
+| File | Pages | What it is |
+|---|---|---|
+| `rrmrr-vita.tex` | 5 | The full CV, in the order the department recommends. |
+| `rrmrr-vita-short.tex` | 3 | The short CV. |
+| `rrmrr-vita-lemann.tex` | 3 | The short CV with grants and research first, for the Lemann proposal. |
+
+The short versions call `\cvshort`, which leaves out every entry wrapped in
+`\fullonly{...}` (older talks, minor awards and teaching), runs courses and
+grant details together on one line, and tightens the spacing. To drop
+something from the short CV, wrap it in `\fullonly`; to add a new version,
+copy `rrmrr-vita-short.tex` and change its `\cvshow` list.
+
+`\cvshow[Label]{key}` prints a section; `\cvshow{grants,awards}` prints two
+as one. These replace the old `2-page` and `dev/lemann-three-page-cv`
+branches, which were copies of the content that fell out of date.
 
 ## Requirements
 
 - XeLaTeX and `latexmk` (MacTeX).
-- Fonts: Minion Pro (text), Lexia Mono (monospace), STIX Two Math, and
-  FontAwesome (GitHub icons). Minion Pro and Lexia Mono come from Adobe
-  Fonts.
+- Fonts: Minion Pro (text), Lexia Mono (monospace), and FontAwesome
+  (GitHub icons). Minion Pro and Lexia Mono come from Adobe Fonts.
+- For `make sync` and `make links`: Python 3 and `curl` (both come with
+  macOS).
 
 The PDF is built on my Mac, not by GitHub Actions: Adobe Fonts can't be
 installed on GitHub's servers, so a cloud build would need different fonts.
@@ -66,7 +89,7 @@ The footer of page 1 reads "Updated with commit `abc1234` on October 19,
 `latexmk` runs `vc.sh` before every build (see `.latexmkrc`). `vc.sh` asks
 git for the last commit that changed the CV source and writes:
 
-- `vc.tex` (git-ignored), which `org-preamble.sty` reads to define
+- `vc.tex` (git-ignored), which `rrmrr-cv.sty` reads to define
   `\cvcommit`, `\cvcommitfull`, and `\cvdate`;
 - `rrmrr-vita.json`, the same commit and date for the website.
 
@@ -87,9 +110,11 @@ date.
 
 | Target | What it does |
 |---|---|
-| `make` | Builds the PDF (`latexmk -xelatex`). |
-| `make release` | Builds from committed source and commits the PDF and JSON. Refuses if the source has uncommitted edits. |
-| `make check` | Fails if the committed PDF is older than the source. |
+| `make` | Builds all three PDFs (`latexmk -xelatex`). |
+| `make release` | Builds from committed source and commits the PDFs and JSON. Refuses if the source has uncommitted edits. |
+| `make check` | Fails if the committed PDFs are older than the source. |
+| `make sync` | Lists papers that differ between the CV and the website's `research/papers.yml` (title or section). Papers that are on the CV on purpose are listed in `tools/check-site.py`. |
+| `make links` | Checks every link in the CV. Fails on links that are gone; lists sites that refuse scripts or time out, to open by hand. |
 | `make hooks` | Points git at `hooks/` (`core.hooksPath`). |
 | `make clean` | Removes LaTeX build files and `vc.tex`. |
 
@@ -97,12 +122,14 @@ date.
 
 | File | Purpose |
 |---|---|
-| `rrmrr-vita.tex` | The CV: layout macros, fonts, and content. |
-| `org-preamble.sty` | Shared packages, hyperref setup, and the version-stamp hook. |
+| `cv-content.tex` | Everything the CV says: personal details and every section. |
+| `rrmrr-vita.tex`, `rrmrr-vita-short.tex`, `rrmrr-vita-lemann.tex` | The versions: which sections, in what order. |
+| `rrmrr-cv.sty` | Packages, fonts, layout macros, header, footer, and the version stamp. |
 | `vc.sh` | Writes `vc.tex` and `rrmrr-vita.json` from git. |
 | `.latexmkrc` | Uses XeLaTeX and runs `vc.sh` before each build. |
-| `hooks/` | `post-commit` (build and commit the PDF) and `pre-push` (check). |
-| `rrmrr-vita.pdf`, `rrmrr-vita.json` | Build outputs, committed so GitHub Pages can serve them. |
+| `hooks/` | `post-commit` (build and commit the PDFs) and `pre-push` (check). |
+| `tools/` | The scripts behind `make sync` and `make links`. |
+| `*.pdf`, `rrmrr-vita.json` | Build outputs, committed so GitHub Pages can serve them. |
 | `logo/` | Harvard logo for the header. |
 
 ## Layout macros
@@ -110,15 +137,24 @@ date.
 Every entry uses one of these, so spacing and indents stay consistent. Section
 labels sit in the left column (26% of the text width); entry titles start the
 right column and detail lines are indented 1em below them, in small type.
+The gaps are three lengths in `rrmrr-cv.sty`: `\cvgap` (4pt, after each
+entry), `\cvsubgap` (2pt, between a title and its details), and
+`\cvheadgap` (3pt, below a group heading).
 
 | Macro | Use |
 |---|---|
-| `\cvsection{Label}{...}` | A section with its label in the left column. |
+| `\cvdefine{key}{Label}{...}` | Stores a section in `cv-content.tex`; prints nothing. |
+| `\cvshow[Label]{key}` | Prints a stored section, or several (`grants,awards`) as one. |
 | `\cvitem{Title}{Details}{Date}` | A standard entry; details and date are optional. |
 | `\cvsubitem{Title}{Detail}{Date}` | A line inside an entry, e.g. a course with its instructor below. |
-| `\cvpub{Title}{Authors}{Venue}{Year}` | A paper: title and year, then authors and venue on one line. |
+| `\cvgrant{Funder}{Amount}{Project}{Co-PIs}{Year}` | A grant; project and co-PIs are optional. |
+| `\cvpub[URL]{Title}{Authors}{Venue}{Year}` | A paper: title (quoted, linked to URL) and year, then authors and venue on one line. |
 | `\cvsubheading{Name}` | A group inside a section, e.g. Journal Articles. |
 | `\cvitemconf{Text}{Year}` | A talk; the year stays aligned when the text wraps. |
+| `\me` | My name in bold, for author lists. |
+| `\fullonly{...}` | Content left out of the short versions. |
+
+Content can't contain a bare `#`; write `\#`, also inside URLs.
 
 Typography rules:
 
@@ -149,3 +185,4 @@ What differs:
 | Building and publishing | Manual | Git hooks build and commit the PDF; `git push` publishes it |
 | Website | Links to the PDF | Also reads `rrmrr-vita.json` to show the same commit and date |
 | Layout | `memoir` with Healy's styles | `article` with the macros above |
+| Content | In the vita file | In `cv-content.tex`, shared by three versions |

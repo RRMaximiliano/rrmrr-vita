@@ -1,0 +1,30 @@
+% Three-page CV for the Lemann Brazilian Research Fund proposal (replaces
+% the dev/lemann-three-page-cv branch): the short CV, with grants and
+% research first. Content: cv-content.tex. Layout: rrmrr-cv.sty.
+\documentclass[a4paper,11pt]{article}
+\usepackage{rrmrr-cv}
+\input{cv-content}
+\cvshort
+\setlength\cvgap{2pt} % a little tighter than the short CV, to fit 3 pages
+
+\begin{document}
+\cvheader
+
+% Roughly: page 1 training and funding, page 2 research, page 3 teaching
+% and skills. Pre-Doctoral Publications are left out to keep it to 3 pages.
+\cvshow{education}
+\cvshow{fields}
+\cvshow{research}
+\cvshow[Selected Grants \textit{\&} Awards]{grants,awards}
+
+\cvshow{publications}
+\cvshow{working}
+\cvshow{progress}
+
+\cvshow{teaching}
+\cvshow[Selected Talks]{talks}
+\cvshow{service}
+\cvshow{software}
+\cvshow[Languages \textit{\&} Citizenship]{languages,personal}
+
+\end{document}

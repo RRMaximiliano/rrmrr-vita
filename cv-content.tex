@@ -1,0 +1,449 @@
+%% cv-content.tex: everything the CV says, in one place.
+%% Each \cvdefine{key}{Label}{...} stores a section; the rrmrr-vita*.tex
+%% files choose which sections to show and in what order (\cvshow{key}).
+%% Wrap an entry in \fullonly{...} to leave it out of the short CV.
+%% Macros are documented in rrmrr-cv.sty and the README.
+
+%%%------------------------------------------------------------------------
+%%% Personal details
+%%%------------------------------------------------------------------------
+\newcommand{\myname}{Rony Rodrigo Maximiliano Rodriguez-Ramirez}
+\newcommand{\myemail}{rrodriguezramirez@g.harvard.edu}
+\newcommand{\myphone}{+1 (202) 876 6568}
+\newcommand{\myweb}{rrmaximiliano.com}
+\newcommand{\me}{\textbf{Rony Rodriguez-Ramirez}} % my name in author lists
+
+\hypersetup{
+  pdfauthor = {Rony Rodriguez-Ramirez},
+  pdftitle  = {Rony Rodriguez-Ramirez: Curriculum Vitae},
+}
+
+%%%------------------------------------------------------------------------
+%%% Education
+%%%------------------------------------------------------------------------
+\cvdefine{education}{Education}{
+  \cvitem{Harvard University}
+  {Ph.D. Education Policy \textit{\&} Program Evaluation\\
+    Affiliations: Center for International Development (CID), Institute
+    for Quantitative Social Science (IQSS), Education Lab for Latin
+    America (ELLA, co-founder)}
+  {2023--2027 (anticipated)}
+
+  \cvitem{KDI School of Public Policy \textit{\&} Management}
+  {M.Sc. Development Policy (Summa Cum Laude)}
+  {2018}
+
+  \cvitem{Universidad Centroamericana, Nicaragua}
+  {B.Sc. Applied Economics (Summa Cum Laude, Best Student Overall Performance)}
+  {2015}
+}
+
+\cvdefine{fields}{Fields}{
+  \cvitem{Economics of Education, Development Economics; Labor Economics
+  (secondary)}{}{}
+}
+
+%%%------------------------------------------------------------------------
+%%% Research Experience
+%%%------------------------------------------------------------------------
+\cvdefine{research}{Research Experience}{
+  \cvitem{Research Assistant, Harvard University}{%
+    \cvsubitem{\textit{Prof. Eric Taylor}}{}{2024--2025}
+    \cvsubitem{\textit{Prof. Dan Levy}}{}{2024--2025}
+    \cvsubitem{\textit{Prof. Emiliana Vegas}}{}{2023--2024}
+    \cvsubitem{\textit{Dr. Álvaro Hofflinger}, DRCLAS}{}{2023--2024}}{}
+
+  \cvitem{Research Consultant, The World Bank}{%
+    \cvsubitem{Development Research Group (DECRG)}
+      {PIs: Berk Özler, Lelys Dinarte-Díaz, and David McKenzie}{2021--2023}
+    \cvsubitem{Development Impact Evaluation (DIME)}
+      {PIs: John Loeser and Florence Kondylis}{2020--2021}}{}
+
+  \cvitem{Research Assistant, Instituto Tecnológico Autónomo de
+  México--IPA}{\textit{Prof. Mauricio Romero}}{2019--2020}
+
+  \cvitem{Research Assistant, University of Oxford}
+  {\textit{Prof. Nathaniel Lane}}{2019--2020}
+
+  \cvitem{Research Assistant, KDI School of Public Policy \textit{\&}
+  Management}{\textit{Prof. Hee-Seung Yang}}{2018--2019}
+}
+
+%%%------------------------------------------------------------------------
+%%% Teaching Experience
+%%%------------------------------------------------------------------------
+\cvdefine{teaching}{Teaching Experience}{
+  \cvitem{Teaching Fellow, Harvard University}{%
+    \cvsubitem{Education Policy Analysis (EPA 101)}
+      {Prof. Emiliana Vegas}{Fall 2026}
+    \cvsubitem{Advanced Quantitative Methods (API 209)}
+      {Prof. Dan Levy}{Fall 2026}
+    \cvsubitem{Using Big Data to Solve Economic and Social Problems}
+      {Prof. Raj Chetty and Dr. Greg Bruich}{2026}
+    \cvsubitem{Economics of Education in Low- and Middle-Income Countries}
+      {Prof. Alejandro Ganimian}{2026}
+    \cvsubitem{Advanced Quantitative Methods (API 209), Math Camp}
+      {Prof. Dan Levy}{Summer 2024, 2026}
+    \cvsubitem{Education Policy Analysis (EPA 101)}
+      {Profs. Emiliana Vegas, Eric Taylor, and Susan Dynarski}{2024--2025}}{}
+
+  \cvitem{Instructor, The World Bank}{%
+    \cvsubitem{R for Stata Users; Reproducible Research Fundamentals}{}
+      {2021--2023}}{}
+
+  \cvitem{Instructor, Lambda Institute, Perú}{%
+    \cvsubitem{Advanced Stata for Economists}{}{2020, 2021}
+    \cvsubitem{Advanced Methods in Econometrics}{}{2021}
+    \cvsubitem{Impact Evaluation}{}{2021}}{}
+
+  \fullonly{
+  \cvitem{Instructor, KDI School, Republic of Korea}{%
+    \cvsubitem{Stata Workshop (Summer School)}{}{2018}}{}
+
+  \cvitem{Instructor, Econ Thaki}{%
+    \cvsubitem{Metrics Using Stata}{}{}}{}
+  }
+
+  \cvitem{Adjunct Lecturer, Universidad Centroamericana,
+  Nicaragua}{%
+    \cvsubitem{Social and Human Economy}{}{2018}}{}
+
+  \cvitem{Teaching Assistant, KDI School, Republic of
+  Korea}{%
+    \cvsubitem{Foundations of Sustainable Development}
+      {Prof. Booyuel Kim}{2018}
+    \cvsubitem{Impact Evaluation Methods}{Prof. Booyuel Kim}{2017}}{}
+
+  \fullonly{
+  \cvitem{Teaching Assistant, Universidad Centroamericana,
+  Nicaragua}{%
+    \cvsubitem{Macroeconomics; Econometrics; Monetary Economics;
+    Development Economics}{}{2016--2018}}{}
+  }
+}
+
+%%%------------------------------------------------------------------------
+%%% Research Grants
+%%%------------------------------------------------------------------------
+%% \cvgrant{Funder}{Amount}{Project}{Co-PIs}{Year}
+\cvdefine{grants}{Research Grants}{
+  \cvgrant{Weiss Fund for Research in Development Economics}
+    {US\$18,000}
+    {Mitigating Summer Learning Loss: A Parental Intervention in Pakistan}
+    {Roohullah Gulzari}
+    {2026}
+
+  \cvgrant{David Rockefeller Center for Latin American Studies, Harvard}
+    {US\$14,000}
+    {Evaluating the Causal Impact of Programa Todos Humanos on
+      Socio-Emotional Learning in Argentine Primary Schools}
+    {}
+    {2026}
+
+  \cvgrant{Strategic Impact Evaluation Fund (SIEF)}
+    {US\$400,000}
+    {Supporting Mental Health in Armenia}
+    {Renata Lemos and Lelys Dinarte-Díaz}
+    {2025}
+
+  \cvgrant{State and Peacebuilding Program Trust Fund}
+    {US\$2.8 million}
+    {Supporting Mental Health in Armenia}
+    {Renata Lemos and Lelys Dinarte-Díaz}
+    {2024}
+
+  \cvgrant{Stone Research Grant, Harvard Kennedy School}
+    {US\$5,000}
+    {}
+    {Jostin Kitmang}
+    {2024}
+
+  \cvgrant{Strategic Impact Evaluation Fund (SIEF)}
+    {US\$400,000}
+    {Tech-Enabled Tutoring Program in Ukraine}
+    {Renata Lemos and Lelys Dinarte-Díaz}
+    {2023}
+
+  \fullonly{
+  \cvgrant{Doctoral Research \textit{\&} Professional Development Grant,
+    Harvard University}
+    {US\$3,500 (2025); US\$2,700 (2024)}
+    {}
+    {}
+    {2024, 2025}
+  }
+}
+
+%%%------------------------------------------------------------------------
+%%% Fellowships and Awards
+%%%------------------------------------------------------------------------
+\cvdefine{awards}{Fellowships \textit{\&} Awards}{
+  \cvitem{Presidential Scholar, Harvard University}{}{2023}
+
+  \cvitem{Outstanding Master's Thesis Award, KDI School}{}{2018}
+
+  \fullonly{
+  \cvitem{Excellence in Academic Performance Award, KDI School}{}{2018}
+
+  \cvitem{Student Community Service Award, KDI School}{}{2018}
+
+  \cvitem{Dean's List with Distinction, KDI School}{}{2016, 2017, 2018}
+  }
+
+  \cvitem{Korean Government Scholarship Program (KGSP)}{}{2015}
+
+  \cvitem{Best Student Performance Award, Universidad Centroamericana}
+  {Highest GPA in the Applied Economics Department}{2015}
+
+  \fullonly{
+  \cvitem{Young Researchers Award (1\textsuperscript{st} Place),
+  Universidad Centroamericana}
+  {Research: ``Gender Wage Gap in Nicaragua,'' with Sebastián Hernández}{2014}
+
+  \cvitem{Young Researchers Award (3\textsuperscript{rd} Place),
+  Universidad Centroamericana}
+  {Research: ``Determinants of Access to Credit in the Urban Sector,''
+    with Sebastián Hernández}{2013}
+  }
+}
+
+%%%------------------------------------------------------------------------
+%%% Publications
+%%%------------------------------------------------------------------------
+%% \cvpub[URL]{Title}{Authors}{Venue}{Year}; the quotes are added for you.
+\cvdefine{publications}{Publications}{
+  \cvsubheading{Journal Articles}
+
+  \cvpub{The Rise of Post-Pandemic Bullying and Its Association with
+    Student Achievement and School Attachment: Evidence from Chile}
+    {\me, Álvaro Hofflinger, and Emiliana Vegas}
+    {\textit{International Journal of Educational Development}, 103677}
+    {2026}
+
+  \cvpub[https://www.tandfonline.com/doi/full/10.1080/19439342.2023.2300138]
+    {Does the Small Business Program Benefit Self-Employed Workers?
+      Evidence from Nicaragua}
+    {Booyuel Kim, \me, and Hee-Seung Yang}
+    {\textit{Journal of Development Effectiveness}, 1--20}
+    {2024}
+
+  \cvsubheading{Book Chapters}
+
+  \cvpub{School Closures and Out-of-School Children During the COVID-19
+    Pandemic: A Global Perspective}
+    {\me\ and Emiliana Vegas}
+    {In Steve Bradley and Colin Green, eds., \textit{Economics of
+      Education}, 3rd ed., Elsevier}
+    {Forthcoming}
+
+  \cvpub[https://link.springer.com/chapter/10.1007/978-3-031-69284-0_2]
+    {From Closure to Recovery: Tracing the Educational Impact of
+      COVID-19 in Chile}
+    {Emiliana Vegas, \me, and Álvaro Hofflinger}
+    {In Harry Patrinos and Nuno Crato, eds., \textit{Improving National
+      Education Systems After COVID-19}, Springer, 17--36}
+    {2024}
+
+  \cvsubheading{Policy Reports}
+
+  \cvpub[https://pw.hks.harvard.edu/post/navigating-opportunity-career-information-and-mobility-in-low-wage-employment]
+    {Navigating Opportunity: Career Information and Mobility in Low-Wage
+      Employment}
+    {Joseph B. Fuller, Kerry McKittrick, Amanda Holloway, \me, and Ali
+      Epstein}
+    {Harvard Kennedy School}
+    {2025}
+}
+
+\cvdefine{working}{Working Papers}{
+  \cvpub[https://renatalemos.com/wp-content/uploads/2026/03/ukraine_03222026.pdf]
+    {Investing in Human Capital During Wartime: Experimental Evidence
+      from Ukraine}
+    {with Lelys Dinarte-Díaz, James Gresham, Renata Lemos, and Harry
+      Patrinos}{}{}
+
+  \cvpub{Shifting Governance: Assessing the Impact of Chile's Educational
+    Integration Reforms on School and Student Outcomes}
+    {}{}{}
+
+  \cvpub{Who Learns What? Combining Causal Forests and IRT in an Online
+    Tutoring RCT for Ukrainian Students}
+    {}{}{}
+
+  \cvpub{Shared Decision-Making: Does Quality of Care Affect
+    Contraceptive Use?}
+    {with Berk Özler and Luca Parisotto}{}{}
+
+  \cvpub{In Utero Exposure to Civil Conflict: Nicaraguan War and Its
+    Long-Term Effects on Socioeconomic Outcomes}
+    {with Booyuel Kim and Hee-Seung Yang}{}{}
+}
+
+\cvdefine{progress}{Work in Progress}{
+  \cvpub{Supporting Mental Health Through the Promotion of Psychosocial
+    Support in Armenian Schools}
+    {with Lelys Dinarte-Díaz and Renata Lemos}
+    {In the field.
+      \href{https://www.socialscienceregistry.org/trials/16497}{AEA RCT Registry}}
+    {}
+
+  \cvpub{Can Parents Fill the Gap? Information, Support, and Human
+    Capital When Schools Close}
+    {with Roohullah Gulzari}
+    {\href{https://www.socialscienceregistry.org/trials/18557}{AEA RCT Registry}}
+    {}
+
+  \cvpub{The Role of Selective Public Universities in Shaping Long-Term
+    Outcomes}
+    {with Jostin Kitmang}{}{}
+}
+
+%% Pre-Doctoral Publications (before 2023), grouped as on the website.
+%% Spanish-language works keep their original titles.
+\cvdefine{predoc}{Pre-Doctoral Publications}{
+  \cvsubheading{Books}
+
+  \cvpub[http://biblioteca.clacso.edu.ar/Nicaragua/casc-uca/20150313124733/Ciudadania-y-violencia.pdf]
+    {Ciudadanía y violencia. Una aproximación a sus múltiples expresiones}
+    {Mario Sánchez, Douglas Castro, and \me}
+    {Managua: Centro de Análisis Socio-Cultural}
+    {2015}
+
+  \cvsubheading{Papers}
+
+  \cvpub[https://www.redalyc.org/journal/152/15264516019/15264516019.pdf]
+    {Crítica y crisis en Nicaragua: la tensión entre democracia y
+      capitalismo}
+    {Hloreley Osorio and \me}
+    {\textit{Anuario de Estudios Centroamericanos}, 46, 1--42}
+    {2020}
+
+  \cvpub[https://amnis.revues.org/2813]
+    {Movimientos sociales y acción colectiva en Nicaragua: Entre la
+      identidad, autonomía y subordinación}
+    {Mario Sánchez, Douglas Castro, \me, and Jorge Guerra}
+    {\textit{Amnis}, 15}
+    {2016}
+
+  \cvpub[https://www.rrmaximiliano.com/files/pdfs/siero_et_al_2015_cooperacion_internacional.pdf]
+    {¿Ha sido importante la cooperación internacional para el desarrollo
+      y el crecimiento económico?}
+    {Carol Siero, Sebastián Hernández, and \me}
+    {\textit{Encuentro}, 102, 52--74}
+    {2015}
+
+  \cvsubheading{Reports}
+
+  \cvpub[https://documents1.worldbank.org/curated/en/099025312242111019/pdf/P1699940bcc13001a083820804f74e8151b.pdf]
+    {Improving the Well-Being of Adolescent Girls in Developing Countries}
+    {}
+    {The World Bank, Washington, D.C.}
+    {2022}
+}
+
+%%%------------------------------------------------------------------------
+%%% Seminars, Conferences, and Talks
+%%%------------------------------------------------------------------------
+\cvdefine{talks}{Seminars, Conferences, \textit{\&} Talks}{
+  \cvitemconf{AI in Higher Education ANZ, University of Sydney;
+  NCME--AERA; CESifo Munich}{2026}
+
+  \cvitemconf{ACME, Harvard; Doctoral Colloquium, Harvard; Society
+  for Research on Educational Effectiveness}{2025}
+
+  \cvitemconf{NEUDC, Northeastern University; Economics of Education
+  Seminar, Harvard}{2024}
+
+  \cvitemconf{Stata Conference, Stanford}{2023}
+
+  \cvitemconf{The World Bank DIME--KDI School joint conference on
+  Impact Evaluation in Sustainable and Inclusive Development}{2021}
+
+  \cvitemconf{Allied Social Science Association (ASSA) meetings;
+  Universidad Centroamericana}{2019}
+
+  \fullonly{
+  \cvitemconf{3ie International Initiative for Impact Evaluation--KDI
+    School joint conference on Impact Evaluation; KAEA-KEA joint
+    International Conference, Sungkyunkwan University; Korea and The
+    World Economy, Jeju National; Asian Meeting of the Econometric
+  Society, Sogang University}{2018}
+
+  \cvitemconf{20th Anniversary of KDI School (poster session); The
+  Ronald Coase Workshop, Xiamen University}{2017}
+
+  \cvitemconf{Central American Congress of Sociology}{2016}
+
+  \cvitemconf{VI Ethics Conference, Universidad Centroamericana;
+  Interdisciplinary Research Congress, Universidad Centroamericana}{2015}
+
+  \cvitemconf{Central American Congress of Sociology, Panamá;
+  Interdisciplinary Research Congress, Universidad Centroamericana}{2014}
+  }
+}
+
+%%%------------------------------------------------------------------------
+%%% Data Projects
+%%%------------------------------------------------------------------------
+\cvdefine{data}{Data Projects}{
+  \cvitem[\textit]{R Packages and Shiny Apps}
+  {\texttt{\href{https://github.com/RRMaximiliano/eleccionesNic}{eleccionesNic}}:
+    tidy datasets on elections in Nicaragua, 1990--2020\\
+    \texttt{\href{https://github.com/RRMaximiliano/constitucionesNic}{constitucionesNic}}:
+    tidy datasets of Nicaragua's political constitutions for text mining\\
+    \texttt{\href{https://rrmaximiliano.shinyapps.io/covid-nicaragua/}{COVID-19 en Nicaragua}}:
+    Shiny app with tidy datasets on COVID-19 in Nicaragua}{}
+
+  \cvitem[\textit]{Stata Packages}
+  {\texttt{\href{https://github.com/RRMaximiliano/welfarefactor}{welfarefactor}}:
+    distribution-sensitive index of welfare, poverty, and inequality\\
+    \texttt{\href{https://github.com/worldbank/stata-linter}{stata\_linter}}:
+    detects readability issues in Stata do-files\\
+    \texttt{\href{https://github.com/RRMaximiliano/send\_est}{send\_est}}:
+    exports estimates to \LaTeX\\
+    \texttt{\href{https://github.com/RRMaximiliano/tvsc}{tvsc}}:
+    publication-ready balance tables}{}
+
+  \cvitem[\textit]{Selected Data Repositories}
+  {\href{https://github.com/RRMaximiliano/migrants_usbp}{\faGithub}
+    U.S. Customs and Border Protection data on Nicaraguan migrants\\
+    \href{https://github.com/RRMaximiliano/policia-nacional-nic-stats}{\faGithub}
+    National Police of Nicaragua crime statistics, 1980--2019\\
+    \href{https://github.com/RRMaximiliano/iml_nicaragua}{\faGithub}
+    Instituto de Medicina Legal reports on violence\\
+    \href{https://github.com/RRMaximiliano/inss_nicaragua}{\faGithub}
+    Instituto Nicaragüense de Seguridad Social insured workers\\
+    \href{https://github.com/RRMaximiliano/observatorio-covid-nicaragua}{\faGithub}
+    COVID-19 in Nicaragua (Observatorio Ciudadano)\\
+    \href{https://github.com/RRMaximiliano/nicaraguan-rulers}{\faGithub}
+    Nicaraguan rulers, 1508--2020\\
+    \href{https://github.com/RRMaximiliano/poblacion-nicaragua-siglo-18-19}{\faGithub}
+    Nicaraguan population, 18th and 19th centuries}{}
+}
+
+%%%------------------------------------------------------------------------
+%%% Service, languages, skills, and personal information
+%%%------------------------------------------------------------------------
+\cvdefine{service}{Academic Service}{
+  \cvitem{Mentor, Fair Graduate Admissions Pathway (FGAP), Columbia
+  University; Mentor, Econ Thaki; Admissions Ambassador, Harvard Graduate
+  School of Education}{}{}
+}
+
+\cvdefine{languages}{Languages}{
+  \cvitem{Spanish (native); English (fluent); French (DELF B2); Korean
+  (TOPIK 4); Nicaraguan Sign Language (intermediate); Latin (beginner);
+  Armenian (beginner)}{}{}
+}
+
+\cvdefine{software}{Software Skills}{
+  \cvitem{Data analysis: R, Stata, Python, SQL; Programming: JavaScript,
+  TypeScript}{}{}
+
+  \cvitem{Survey tools: ODK (SurveyCTO, KoboToolbox), Qualtrics; Geospatial:
+  ArcGIS}{}{}
+}
+
+\cvdefine{personal}{Personal Information}{
+  \cvitem{Citizenship: Nicaraguan}{}{}
+}

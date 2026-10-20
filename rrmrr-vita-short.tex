@@ -1,0 +1,26 @@
+% Two-page CV (replaces the old 2-page branch). Same content as the full
+% CV: \cvshort drops entries marked \fullonly and puts sub-entries and
+% grants on one line. Content: cv-content.tex. Layout: rrmrr-cv.sty.
+\documentclass[a4paper,11pt]{article}
+\usepackage{rrmrr-cv}
+\input{cv-content}
+\cvshort
+
+\begin{document}
+\cvheader
+
+\cvshow{education}
+\cvshow{fields}
+\cvshow{research}
+\cvshow{teaching}
+\cvshow[Grants \textit{\&} Awards]{grants,awards}
+\cvshow{publications}
+\cvshow{working}
+\cvshow{progress}
+\cvshow{talks}
+\cvshow{service}
+\cvshow{languages}
+\cvshow{software}
+\cvshow{personal}
+
+\end{document}
