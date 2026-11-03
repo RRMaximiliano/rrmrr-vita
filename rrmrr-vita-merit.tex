@@ -1,0 +1,255 @@
+% Two-page CV for the Harvard GSAS Merit/Term-Time Fellowship, 2027--28.
+% US Letter, at most 2 pages. Starts from the short CV (rrmrr-vita-short.tex)
+% and puts the dissertation first. Publications, fields, service, and
+% languages come straight from cv-content.tex; the sections defined below
+% are condensed regroupings of entries that are also in cv-content.tex
+% (update both when those entries change).
+% Build: latexmk -xelatex rrmrr-vita-merit.tex (the PDF is committed).
+\documentclass[letterpaper,11pt]{article}
+\usepackage{rrmrr-cv}
+\input{cv-content}
+\cvshort
+
+% Detail lines and dates are \small; keep them at 10.5pt (not 10pt).
+\renewcommand{\small}{\fontsize{10.5}{12.6}\selectfont}
+\setlength\cvgap{2pt}
+\setlength\parskip{0.3em}
+\geometry{reset, letterpaper, hmargin=0.55in, top=0.5in, bottom=0.55in,
+  headheight=14pt, headsep=10pt, footskip=22pt, includehead}
+
+% Name on every page: page 1 has the header block; later pages a running head.
+\fancyhead[L]{\small\textsc{Rony Rodriguez-Ramirez}}
+\fancyhead[R]{\small Curriculum Vitae}
+\fancypagestyle{commit}{%
+  \fancyhf{}%
+  \fancyfoot[R]{{\normalsize \texttt{\cvversion}}}}
+
+% Narrower label column than rrmrr-cv.sty (18% instead of 26%), so entries
+% get more of the line. Otherwise the same as \cvsection in the style.
+\renewcommand{\cvsection}[2]{%
+  \par\vspace{\cvgap}
+  \begin{list}{}{%
+      \setlength{\leftmargin}{0.18\textwidth}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\topsep}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\itemsep}{0pt}
+      \setlength{\parsep}{0pt}
+    }
+  \item
+    \makebox[0pt][r]{%
+      \smash{%
+        \begin{minipage}[t]{0.165\textwidth}
+          \raggedright\textbf{#1}
+        \end{minipage}%
+      }%
+      \hspace{0.015\textwidth}%
+    }%
+    \ignorespaces
+    #2
+  \end{list}
+}
+
+% Talks: a narrower year column than the style's (years only here).
+\renewcommand{\cvitemconf}[2]{%
+  \noindent
+  \begin{minipage}[t]{0.91\linewidth}
+    \raggedright \textnormal{#1}\strut
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.09\linewidth}
+    \raggedleft {\small #2}\strut
+  \end{minipage}%
+  \par
+  \nointerlineskip
+  \vspace{\cvgap}%
+}
+
+% Same as \cvpub in the style, but the title takes all of the line the
+% year leaves free (the full line when there is no year).
+\newlength\cvyearwidth
+\renewcommand{\cvpub}[5][]{%
+  \noindent
+  \ifblank{#5}{%
+    \begin{minipage}[t]{\linewidth}
+      \raggedright ``\ifblank{#1}{#2}{\href{#1}{#2}}''\strut
+    \end{minipage}%
+  }{%
+    \settowidth\cvyearwidth{\small #5}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\cvyearwidth-1.5em\relax}
+      \raggedright ``\ifblank{#1}{#2}{\href{#1}{#2}}''\strut
+    \end{minipage}%
+    \hfill%
+    {\small #5}\strut
+  }%
+  \par\nopagebreak\nointerlineskip\vspace{\cvsubgap}%
+  \ifboolexpr{test {\ifblank{#3}} and test {\ifblank{#4}}}{}{%
+    {%
+      \raggedright
+      \addtolength{\leftskip}{1em}%
+      \small
+      \noindent #3\ifboolexpr{test {\ifblank{#3}} or test {\ifblank{#4}}}{}{. }#4\par
+    }%
+  }%
+  \vspace{\cvgap}%
+}
+
+%%%------------------------------------------------------------------------
+%%% Merit-only sections
+%%%------------------------------------------------------------------------
+\cvdefine{meriteducation}{Education}{
+  \cvitem{Harvard University}
+  {Ph.D. Education Policy \textit{\&} Program Evaluation. Advisor: Prof.
+    Emiliana Vegas\\
+    Dissertation: \textit{Education Under and After Crisis: Protecting
+      and Rebuilding Children's Human Capital}\\
+    Affiliations: CID, IQSS, Education Lab for Latin America (ELLA,
+    co-founder)}
+  {2023--2027 (anticipated)}
+
+  \cvitem{KDI School of Public Policy \textit{\&} Management}
+  {M.Sc. Development Policy (Summa Cum Laude)}
+  {2018}
+
+  \cvitem{Universidad Centroamericana, Nicaragua}
+  {B.Sc. Applied Economics (Summa Cum Laude, Best Student Overall Performance)}
+  {2015}
+}
+
+\cvdefine{dissertation}{Dissertation Research}{
+  \cvsubheading{Ukraine: tutoring and psychosocial support during wartime (working papers)}
+
+  \cvpub[https://renatalemos.com/wp-content/uploads/2026/03/ukraine_03222026.pdf]
+    {Investing in Human Capital During Wartime: Experimental Evidence
+      from Ukraine}
+    {with Lelys Dinarte-Díaz, James Gresham, Renata Lemos, and Harry
+      Patrinos}{}{}
+
+  \cvpub{Who Learns What? Combining Causal Forests and IRT in an Online
+    Tutoring RCT for Ukrainian Students}
+    {}{}{}
+
+  \cvsubheading{Armenia: mental health and psychosocial support in schools}
+
+  \cvpub{Supporting Mental Health Through the Promotion of Psychosocial
+    Support in Armenian Schools}
+    {with Lelys Dinarte-Díaz and Renata Lemos}
+    {In the field.
+      \href{https://www.socialscienceregistry.org/trials/16497}{AEA RCT Registry}}
+    {}
+
+  \cvsubheading{Argentina: socio-emotional learning in primary schools}
+
+  \cvpub{Evaluating the Causal Impact of Programa Todos Humanos on
+    Socio-Emotional Learning in Argentine Primary Schools}
+    {}{}{}
+}
+
+\cvdefine{meritworking}{Other Working Papers}{
+  \cvpub{Shifting Governance: Assessing the Impact of Chile's Educational
+    Integration Reforms on School and Student Outcomes}
+    {}{}{}
+
+  \cvpub{In Utero Exposure to Civil Conflict: Nicaraguan War and Its
+    Long-Term Effects on Socioeconomic Outcomes}
+    {with Booyuel Kim and Hee-Seung Yang}{}{}
+
+  \cvsubheading{Work in Progress}
+
+  \cvpub{Can Parents Fill the Gap? Information, Support, and Human
+    Capital When Schools Close}
+    {with Roohullah Gulzari}
+    {\href{https://www.socialscienceregistry.org/trials/18557}{AEA RCT Registry}}
+    {}
+}
+
+% Grants and awards from cv-content.tex, one detail line each.
+\cvdefine{meritgrants}{Grants, Fellowships \textit{\&} Awards}{
+  \cvitem{Weiss Fund for Research in Development Economics, US\$18,000}
+  {``Mitigating Summer Learning Loss: A Parental Intervention in Pakistan'';
+    Co-PI with Roohullah Gulzari}{2026}
+
+  \cvitem{David Rockefeller Center for Latin American Studies, Harvard,
+    US\$14,000}
+  {``Evaluating the Causal Impact of Programa Todos Humanos on
+    Socio-Emotional Learning in Argentine Primary Schools''}{2026}
+
+  \cvitem{Strategic Impact Evaluation Fund (SIEF), US\$400,000}
+  {``Supporting Mental Health in Armenia''; Co-PI with Renata Lemos and
+    Lelys Dinarte-Díaz}{2025}
+
+  \cvitem{State and Peacebuilding Program Trust Fund, US\$2.8 million}
+  {``Supporting Mental Health in Armenia''; Co-PI with Renata Lemos and
+    Lelys Dinarte-Díaz}{2024}
+
+  \cvitem{Stone Research Grant, Harvard Kennedy School, US\$5,000}
+  {Co-PI with Jostin Kitmang}{2024}
+
+  \cvitem{Strategic Impact Evaluation Fund (SIEF), US\$400,000}
+  {``Tech-Enabled Tutoring Program in Ukraine''; Co-PI with Renata Lemos
+    and Lelys Dinarte-Díaz}{2023}
+
+  \cvitem{Presidential Scholar, Harvard University}{}{2023}
+  \cvitem{Outstanding Master's Thesis Award, KDI School}{}{2018}
+  \cvitem{Korean Government Scholarship Program (KGSP)}{}{2015}
+  \cvitem{Best Student Performance Award, Universidad Centroamericana}{}{2015}
+}
+
+\cvdefine{meritresearch}{Research Experience}{
+  \cvitem{Research Assistant, Harvard University}
+  {\textit{Profs. Eric Taylor, Dan Levy, and Emiliana Vegas; Dr. Álvaro
+    Hofflinger} (DRCLAS)}
+  {2023--2025}
+
+  \cvitem{Research Consultant, The World Bank}
+  {DECRG (\textit{Özler, Dinarte-Díaz, McKenzie}), 2021--2023; DIME
+    (\textit{Loeser, Kondylis}), 2020--2021}
+  {2020--2023}
+
+  \cvitem{Research Assistant, ITAM--IPA; University of Oxford; KDI School}
+  {\textit{Profs. Mauricio Romero; Nathaniel Lane; Hee-Seung Yang}}
+  {2018--2020}
+}
+
+\cvdefine{meritteaching}{Teaching Experience}{
+  \cvitem{Teaching Fellow, Harvard University}
+  {Education Policy Analysis, EPA~101 (\textit{Vegas, Taylor,
+    Dynarski}); Advanced Quantitative Methods, API~209, and Math Camp
+    (\textit{Levy}); Using Big Data to Solve Economic and Social Problems
+    (\textit{Chetty, Bruich}); Economics of Education in Low- and
+    Middle-Income Countries (\textit{Ganimian})}
+  {2024--2026}
+
+}
+
+% Talks from cv-content.tex: 2024--2026 and ASSA 2019.
+\cvdefine{merittalks}{Selected Presentations}{
+  \cvitemconf{AI in Higher Education ANZ, University of Sydney;
+  NCME--AERA; CESifo Munich}{2026}
+
+  \cvitemconf{ACME, Harvard; Doctoral Colloquium, Harvard; Society
+  for Research on Educational Effectiveness}{2025}
+
+  \cvitemconf{NEUDC, Northeastern University; Economics of Education
+  Seminar, Harvard}{2024}
+
+  \cvitemconf{Allied Social Science Association (ASSA) meetings}{2019}
+}
+
+\begin{document}
+\cvheader
+
+\cvshow{meriteducation}
+\cvshow{fields}
+\cvshow{dissertation}
+\cvshow{publications}
+\cvshow{meritworking}
+\cvshow{meritgrants}
+\cvshow{merittalks}
+\cvshow{meritresearch}
+\cvshow{meritteaching}
+\cvshow{service}
+\cvshow{languages}
+
+\end{document}
